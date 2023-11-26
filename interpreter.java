@@ -75,6 +75,11 @@ public class interpreter{
             }
             lastgolderror = new goldException(concate(inloc,conacte(":",tempstring)),temptype);
             Ehandler.adderror(lastgolderror);
+          } else if(tempstring.equals("import")){
+            try{
+            } catch(Exception e){
+              lastgolderror = new
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
