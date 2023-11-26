@@ -14,6 +14,10 @@ public class errorHandler{
     errors[nexterror] = error;
     nexterror += 1;
   }
+  public static void removeerror(){
+    nexterror -= 1;
+    errors[nexterror] = null;
+  }
   public static void rethrow(){
     int a = 1;
     goldException temperror;
