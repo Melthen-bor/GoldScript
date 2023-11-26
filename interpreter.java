@@ -47,7 +47,7 @@ public class interpreter{
                 b = tempint;
               }
             } catch(Exception e){
-              System.print("");
+              lastgolderror = new goldException(concate(inloc,concate(":","Failed to parse command <goif>")),"Command_error");
             }
           } else if(tempstring.equals("go")){
             try{
@@ -55,10 +55,13 @@ public class interpreter{
               tempint = Integer.valueOf(parseInt(tempstring));
               b = tempint;
             } catch(Exception e){
-              System.print("");
+              lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[1]:Failed to parse command <go>\033[0m")),"Command_error");
             }
+          } else if(tempstring.equals("throw")){
+            
+          }
           } else{
-            lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[0]:unknown command\033[0m","Command_error")));
+            lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[0]:unknown command\033[0m")),"Command_error");
           }
           b += 1;
         } catch(Exception e){
