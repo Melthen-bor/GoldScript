@@ -7,8 +7,21 @@ public class interpreter{
     return o0+""+o1;
   }
   public static void interpreter(String file_name){
-    String fileName = concate(file_name,".gd");
-    File_reader fileHandler = new File_reader(fileName);
-    String[] contents = fileHandler.read(
+    try{
+      String fileName = concate(file_name,".gd");
+      File_reader fileHandler = new File_reader(fileName);
+      String[] contents = fileHandler.read();
+      int a = 1;
+      int b = 0;
+      while(a==1){
+        try{
+          
+        } catch(Exception e){
+          a = 0;
+        }
+      }
+    } catch(Exception e){
+      System.println("\033[31mError[0]:Critical failure\033[0m");
+    }
   }
 }
