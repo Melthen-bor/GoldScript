@@ -80,7 +80,8 @@ public class interpreter{
           } else if(tempstring.equals("import")){
             try{
               tempstring = command[1];
-              fileHandler.
+              fileHandler.change(tempstring);
+              tempcontents = file
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error\[3\]:failed to parse command \<import\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
