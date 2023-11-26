@@ -33,6 +33,7 @@ public class interpreter{
       ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");
       goldException lastgolderror;
+      errorhandler Ehandler = new errorhandler();
       while(a==1){
         try{
           unparse = contents[b];
