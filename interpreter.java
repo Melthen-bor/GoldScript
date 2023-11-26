@@ -129,8 +129,12 @@ public class interpreter{
             }
           } else if(tempstring.equals("assign"){
             try{
+              tempint = Integer.valueOf(parseInt(command[1]));
+              tempstring = command[2];
+              vars[tempint] = tempstring;
             } catch(Exception e){
-              lastgolderror = new gold
+              lastgolderror = new goldException(concate(inloc,":Error\[5\]:Failed to parse command \<assign\>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
             }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
