@@ -20,12 +20,18 @@ public class interpreter{
       int b = 0;
       String[] command;
       String unparse;
-      String inloc = custom[0];
+      String inloc;
+      try{
+        inloc = custom[0];
+      } catch(Exception e){
+        inloc = "Gold_Program";
+      }
       String tempstring;
       Integer tempint;
       Object result;
       ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");
+      goldException lastgolderror;
       while(a==1){
         try{
           unparse = contents[b];
@@ -52,6 +58,7 @@ public class interpreter{
               System.print("");
             }
           } else{
+            lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[0]:unknown command\033[0m","Command_error")));
           }
           b += 1;
         } catch(Exception e){
@@ -59,7 +66,7 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.println(concate(inloc,"\033[31mError[0]:Critical failure\033[0m"));
+      System.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m");
     }
   }
 }
