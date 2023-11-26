@@ -33,8 +33,8 @@ public class interpreter{
       String temptype;
       Object result;
       String[] tempcontents;
-      ScriptEngineManager manager = new ScriptEngineManager();
-      ScriptEngine engine = new manager.getEngineByName("JavaScript");
+      /*ScriptEngineManager manager = new ScriptEngineManager();
+      ScriptEngine engine = new manager.getEngineByName("JavaScript");*/
       goldException lastgolderror;
       errorHandler Ehandler = new errorhandler();
       interpreter tempinter;
@@ -126,6 +126,11 @@ public class interpreter{
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error\[4\]:failed to parse command \<return\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
+            }
+          } else if(tempstring.equals("assign"){
+            try{
+            } catch(Exception e){
+              lastgolderror = new gold
             }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
