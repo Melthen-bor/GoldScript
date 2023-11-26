@@ -30,10 +30,12 @@ public class interpreter{
       Integer tempint;
       String temptype;
       Object result;
+      String[] tempcontents;
       ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");
       goldException lastgolderror;
       errorHandler Ehandler = new errorhandler();
+      interpreter tempinter;
       while(a==1){
         try{
           unparse = contents[b];
@@ -73,12 +75,15 @@ public class interpreter{
               tempstring = "Error\[\?\]undefined";
               temptype = "Thrown_error";
             }
-            lastgolderror = new goldException(concate(inloc,conacte(":",tempstring)),temptype);
+            lastgolderror = new goldException(concate(inloc,concate(":",tempstring)),temptype);
             Ehandler.adderror(lastgolderror);
           } else if(tempstring.equals("import")){
             try{
+              tempstring = command[1];
+              fileHandler.
             } catch(Exception e){
-              lastgolderror = new
+              lastgolderror = new goldException(concate(inloc,":Error\[3\]:failed to parse command \<import\>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
             }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
