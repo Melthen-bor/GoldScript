@@ -9,5 +9,6 @@ public class interpreter{
   public static void interpreter(String file_name){
     String fileName = concate(file_name,".gd");
     File_reader fileHandler = new File_reader(fileName);
+    String[] contents = fileHandler.read(
   }
 }
