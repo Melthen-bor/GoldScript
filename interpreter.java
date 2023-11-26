@@ -28,6 +28,7 @@ public class interpreter{
       }
       String tempstring;
       Integer tempint;
+      String temptype;
       Object result;
       ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");
@@ -47,7 +48,7 @@ public class interpreter{
                 b = tempint;
               }
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,concate(":","Failed to parse command <goif>")),"Command_error");
+              lastgolderror = new goldException(concate(inloc,concate(":","Error\[2\]:Failed to parse command \<goif\>")),"Command_error");
             }
           } else if(tempstring.equals("go")){
             try{
@@ -55,13 +56,24 @@ public class interpreter{
               tempint = Integer.valueOf(parseInt(tempstring));
               b = tempint;
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[1]:Failed to parse command <go>\033[0m")),"Command_error");
+              lastgolderror = new goldException(concate(inloc,concate(":","Error\[1\]:Failed to parse command \<go\>")),"Command_error");
             }
           } else if(tempstring.equals("throw")){
-            
+            try{
+              tempstring = command[1];
+              try{
+                temptype = command[2];
+              } catch(Exception e){
+                temptype = "Thrown_error";
+              }
+            } catch(Exception e){
+              tempstring = "Error\[\?\]undefined";
+              temptype = "Thrown_error";
+            }
+            lastgolderror = new goldException(concate(inloc,conacte(":",tempstring)),temptype);
           }
           } else{
-            lastgolderror = new goldException(concate(inloc,concate(":","\033[31mError[0]:unknown command\033[0m")),"Command_error");
+            lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
           }
           b += 1;
         } catch(Exception e){
@@ -69,7 +81,7 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m");
+      System.println("Gold_interpreter:\033[31mError\[0\]:Critical failure\033[0m");
     }
   }
 }
