@@ -31,7 +31,7 @@ public class interpreter{
           unparse = contents[b];
           command = unparse.split(" ");
           tempstring = command[0];
-          if(tempstring.equals("jump")){
+          if(tempstring.equals("goif")){
             try{
               tempstring = command[1];
               tempint = Integer.valueOf(parseInt(tempstring));
@@ -43,6 +43,15 @@ public class interpreter{
             } catch(Exception e){
               System.print("");
             }
+          } else if(tempstring.equals("go")){
+            try{
+              tempstring = command[1];
+              tempint = Integer.valueOf(parseInt(tempstring));
+              b = tempint;
+            } catch(Exception e){
+              System.print("");
+            }
+          } else{
           }
           b += 1;
         } catch(Exception e){
