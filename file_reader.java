@@ -11,15 +11,17 @@ public class file_reader{
     int a = 1;
     int b = 0;
     String temp;
+    Scanner fileHandler = new Scanner(file);
     while(a==1){
       try{
-        temp = file.nextLine();
+        temp = fileHandler.nextLine();
         out[b] = temp;
         b += 1;
       } catch(Exception e){
         a = 0;
       }
     }
+    fileHandler.close();
     return out;
   }
   public static void change(String file_name){
