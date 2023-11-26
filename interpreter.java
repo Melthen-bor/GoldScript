@@ -6,7 +6,8 @@ public class interpreter{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public static void main(String[] args){
-    
+  public static void interpreter(String file_name){
+    String fileName = concate(file_name,".gd");
+    File_reader fileHandler = new File_reader(fileName);
   }
 }
