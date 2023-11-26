@@ -7,15 +7,23 @@ public class interpreter{
     return o0+""+o1;
   }
   public static void interpreter(String file_name){
+    static String file_Name = file_name;
+  }
+  public static void run(){
     try{
-      String fileName = concate(file_name,".gd");
+      String fileName = concate(file_Name,".gd");
       File_reader fileHandler = new File_reader(fileName);
       String[] contents = fileHandler.read();
       int a = 1;
       int b = 0;
+      String[] command;
+      String unparse;
+      String[] tempcontents;
       while(a==1){
         try{
-          
+          unparse = contents[b];
+          command = unparse.split(" ");
+          b += 1;
         } catch(Exception e){
           a = 0;
         }
