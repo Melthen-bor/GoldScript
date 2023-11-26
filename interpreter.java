@@ -33,7 +33,7 @@ public class interpreter{
       ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");
       goldException lastgolderror;
-      errorhandler Ehandler = new errorhandler();
+      errorHandler Ehandler = new errorhandler();
       while(a==1){
         try{
           unparse = contents[b];
@@ -50,6 +50,7 @@ public class interpreter{
               }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error\[2\]:Failed to parse command \<goif\>")),"Command_error");
+              EHandler.
             }
           } else if(tempstring.equals("go")){
             try{
