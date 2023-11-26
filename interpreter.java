@@ -11,7 +11,7 @@ public class interpreter{
   public static void interpreter(String[] args){
     private final String[] custom = args;
   }
-  public static void run(String file_name){
+  public static String run(String file_name){
     try{
       String fileName = concate(file_name,".gd");
       File_reader fileHandler = new File_reader(fileName);
@@ -28,6 +28,8 @@ public class interpreter{
       }
       String tempstring;
       Integer tempint;
+      Integer tempintii;
+      Integer tempintiii;
       String temptype;
       Object result;
       String[] tempcontents;
@@ -36,6 +38,8 @@ public class interpreter{
       goldException lastgolderror;
       errorHandler Ehandler = new errorhandler();
       interpreter tempinter;
+      String ret = "";
+      String[] vars;
       while(a==1){
         try{
           unparse = contents[b];
@@ -46,9 +50,34 @@ public class interpreter{
               tempstring = command[1];
               tempint = Integer.valueOf(parseInt(tempstring));
               tempstring = command[2];
-              result = engine.eval(tempstring);
-              if(result){
-                b = tempint;
+              tempintii = Integer.valueOf(parseInt(command[3]));
+              tempintiii = Integer.valueOf(parseInt(command[4]));
+              tempintii = Integer.valueOf(parseInt(vars[tempintii]));
+              tempintiii = Integer.valueOf(parseInt(vars[tempintiii]));
+              if(tempstring.equals("equals")){
+                if(tempintii==tempintiii){
+                  b = tempint;
+                }
+              } else if(tempstring.equals("greater_than"){
+                if(tempintii>tempintiii){
+                  b = tempint;
+                }
+              } else if(tempstring.equals("less_than"){
+                if(tempintii<tempintiii){
+                  b = tempint;
+                }
+              } else if(tempstring.equals("greater_or_equals"){
+                if(tempintii>=tempintiii){
+                  b = tempint;
+                }
+              } else if(tempstring.equals("less_or_equals"){
+                if(tempintii<=tempintiii){
+                  b = tempint;
+                }
+              } else if(tempstring.equals("not"){
+                if(tempintii!=tempintiii){
+                  b = tempint;
+                }
               }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error\[2\]:Failed to parse command \<goif\>")),"Command_error");
@@ -68,6 +97,9 @@ public class interpreter{
               tempstring = command[1];
               try{
                 temptype = command[2];
+                if(temptype.equals("Command_error"){
+                  temptype = "Thrown_error";
+                }
               } catch(Exception e){
                 temptype = "Thrown_error";
               }
@@ -80,10 +112,19 @@ public class interpreter{
           } else if(tempstring.equals("import")){
             try{
               tempstring = command[1];
-              fileHandler.change(tempstring);
-              tempcontents = fileHandler.read();
+              tempint = Integer.valueOf(parseInt(command[2]));
+              tempinter = new interpreter();
+              vars[tempint] = tempinter.run(tempstring);
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error\[3\]:failed to parse command \<import\>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
+          } else if(tempstring.equals("return"){
+            try{
+              tempstring = command[1];
+              ret = tempstring;
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error\[4\]:failed to parse command \<return\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else{
@@ -100,4 +141,5 @@ public class interpreter{
       Ehandler.rethrow();
     }
   }
+  return ret;
 }
