@@ -50,7 +50,7 @@ public class interpreter{
               }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error\[2\]:Failed to parse command \<goif\>")),"Command_error");
-              EHandler.
+              Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("go")){
             try{
@@ -59,6 +59,7 @@ public class interpreter{
               b = tempint;
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error\[1\]:Failed to parse command \<go\>")),"Command_error");
+              Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("throw")){
             try{
@@ -73,9 +74,10 @@ public class interpreter{
               temptype = "Thrown_error";
             }
             lastgolderror = new goldException(concate(inloc,conacte(":",tempstring)),temptype);
-          }
+            Ehandler.adderror(lastgolderror);
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
+            Ehandler.adderror(lastgolderror);
           }
           b += 1;
         } catch(Exception e){
@@ -83,7 +85,8 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.println("Gold_interpreter:\033[31mError\[0\]:Critical failure\033[0m");
+      System.println("Gold_interpreter:\033[31mError\[0\]:Critical failure\033[0m\nor program ended");
+      Ehandler.rethrow();
     }
   }
 }
