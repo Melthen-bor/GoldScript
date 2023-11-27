@@ -9,7 +9,7 @@ public class Gold{
   public static void main(String[] args){
     String file = args[0];
     String[] intargs = args[1].split("\[split\]");
-    interpreter int = new interpreter();
-    int.run(args[2]);
+    interpreter inter = new interpreter();
+    inter.run(args[2]);
   }
 }
