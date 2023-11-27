@@ -152,8 +152,8 @@ public class interpreter{
       }
     } catch(Exception e){
       System.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m\nor program ended");
-      Ehandler.rethrow();
     }
+  Ehandler.rethrow();
   return ret;
   }
 }
