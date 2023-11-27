@@ -48,12 +48,12 @@ public class interpreter{
           if(tempstring.equals("goif")){
             try{
               tempstring = command[1];
-              tempint = Integer.valueOf(parseInt(tempstring));
+              tempint = Integer.valueOf(tempstring);
               tempstring = command[2];
-              tempintii = Integer.valueOf(parseInt(command[3]));
-              tempintiii = Integer.valueOf(parseInt(command[4]));
-              tempintii = Integer.valueOf(parseInt(vars[tempintii]));
-              tempintiii = Integer.valueOf(parseInt(vars[tempintiii]));
+              tempintii = Integer.valueOf(command[3]);
+              tempintiii = Integer.valueOf(command[4]);
+              tempintii = Integer.valueOf(vars[tempintii]);
+              tempintiii = Integer.valueOf(vars[tempintiii]);
               if(tempstring.equals("equals")){
                 if(tempintii==tempintiii){
                   b = tempint;
@@ -86,7 +86,7 @@ public class interpreter{
           } else if(tempstring.equals("go")){
             try{
               tempstring = command[1];
-              tempint = Integer.valueOf(parseInt(tempstring));
+              tempint = Integer.valueOf(tempstring);
               b = tempint;
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error[1]:Failed to parse command \<go\>")),"Command_error");
@@ -112,7 +112,7 @@ public class interpreter{
           } else if(tempstring.equals("import")){
             try{
               tempstring = command[1];
-              tempint = Integer.valueOf(parseInt(command[2]));
+              tempint = Integer.valueOf(command[2]);
               tempinter = new interpreter();
               vars[tempint] = tempinter.run(tempstring);
             } catch(Exception e){
@@ -129,7 +129,7 @@ public class interpreter{
             }
           } else if(tempstring.equals("assign"){
             try{
-              tempint = Integer.valueOf(parseInt(command[1]));
+              tempint = Integer.valueOf(command[1]);
               tempstring = command[2];
               vars[tempint] = tempstring;
             } catch(Exception e){
