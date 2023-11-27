@@ -1,4 +1,4 @@
-package com.gold.gold;
+package com.gold.gold.handlers;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
