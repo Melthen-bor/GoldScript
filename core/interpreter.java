@@ -36,7 +36,7 @@ public class interpreter{
       /*ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");*/
       goldException lastgolderror;
-      errorHandler Ehandler = new errorhandler();
+      errorHandler Ehandler = new errorHandler();
       interpreter tempinter;
       String ret = "";
       String[] vars;
