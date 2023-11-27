@@ -1,19 +1,19 @@
-/*package com.gold.gold;
-import com.gold.gold.handlers.file_reader;
-import com.gold.gold.handlers.errorHandler;
-import com.gold.gold.handlers.goldException;*/
+package gold;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 public class interpreter{
+  ArrayList<String> custom = new ArrayList<String>();
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public static void interpreter(String[] args){
-    final String[] custom = args;
+  public interpreter(String[] args){
+    custom.addAll(Arrays.asList(args));
   }
   public static String run(String file_name){
     String ret = "";
@@ -21,14 +21,15 @@ public class interpreter{
     try{
       String fileName = concate(file_name,".gd");
       file_reader fileHandler = new file_reader(fileName);
-      String[] contents = fileHandler.read();
+      ArrayList<String> contents = new ArrayList<String>();
+      contents.addAll(Arrays.asList(fileHandler.read()));
       int a = 1;
       int b = 0;
-      String[] command;
+      ArrayList<String> command = new ArrayList<String>();
       String unparse;
       String inloc;
       try{
-        inloc = custom[0];
+        inloc = custom.get(0);
       } catch(Exception e){
         inloc = "Gold_Program";
       }
@@ -38,27 +39,24 @@ public class interpreter{
       Integer tempintiii;
       String temptype;
       Object result;
-      String[] tempcontents;
-      /*ScriptEngineManager manager = new ScriptEngineManager();
-      ScriptEngine engine = new manager.getEngineByName("JavaScript");*/
       goldException lastgolderror;
       interpreter tempinter;
-      String[] vars;
+      ArrayList<String> vars = new ArrayList<String>();
       while(a==1){
         try{
-          unparse = contents[b];
-          command = unparse.split(" ");
-          tempstring = command[0];
+          unparse = contents.get(b);
+          command.addAll(Array.asList(unparse.split(" ")));
+          tempstring = command.get(0);
           //This is where the included functions are defined
           if(tempstring.equals("goif")){
             try{
-              tempstring = command[1];
+              tempstring = command.get(1);
               tempint = Integer.valueOf(tempstring);
-              tempstring = command[2];
-              tempintii = Integer.valueOf(command[3]);
-              tempintiii = Integer.valueOf(command[4]);
-              tempintii = Integer.valueOf(vars[tempintii]);
-              tempintiii = Integer.valueOf(vars[tempintiii]);
+              tempstring = command.get(2);
+              tempintii = Integer.valueOf(command.get(3));
+              tempintiii = Integer.valueOf(command.get(4));
+              tempintii = Integer.valueOf(vars.get(tempintii));
+              tempintiii = Integer.valueOf(vars.get(tempintiii));
               if(tempstring.equals("equals")){
                 if(tempintii==tempintiii){
                   b = tempint;
@@ -90,7 +88,7 @@ public class interpreter{
             }
           } else if(tempstring.equals("go")){
             try{
-              tempstring = command[1];
+              tempstring = command.get(1);
               tempint = Integer.valueOf(tempstring);
               b = tempint;
             } catch(Exception e){
@@ -99,9 +97,9 @@ public class interpreter{
             }
           } else if(tempstring.equals("throw")){
             try{
-              tempstring = command[1];
+              tempstring = command(1);
               try{
-                temptype = command[2];
+                temptype = command(2);
                 if(temptype.equals("Command_error"){
                   temptype = "Thrown_error";
                 }
@@ -116,17 +114,17 @@ public class interpreter{
             Ehandler.adderror(lastgolderror);
           } else if(tempstring.equals("import")){
             try{
-              tempstring = command[1];
-              tempint = Integer.valueOf(command[2]);
+              tempstring = command(1);
+              tempint = Integer.valueOf(command(2));
               tempinter = new interpreter();
-              vars[tempint] = tempinter.run(tempstring);
+              vars.set(tempint,tempinter.run(tempstring));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3:failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("return"){
             try{
-              tempstring = command[1];
+              tempstring = command.get(1);
               ret = tempstring;
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[4]:failed to parse command <return>"),"Command_error");
@@ -134,9 +132,9 @@ public class interpreter{
             }
           } else if(tempstring.equals("assign"){
             try{
-              tempint = Integer.valueOf(command[1]);
-              tempstring = command[2];
-              vars[tempint] = tempstring;
+              tempint = Integer.valueOf(command.get(1));
+              tempstring = command.get(2);
+              vars.set(tempint,tempstring);
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error");
               Ehandler.adderror(lastgolderror);
@@ -145,13 +143,14 @@ public class interpreter{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
           }
+          command.clear();
           b += 1;
         } catch(Exception e){
           a = 0;
         }
       }
     } catch(Exception e){
-      System.out.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m\nor program ended");
+      System.out.println("Gold_interpreter:\033[31mError[0\]:Critical failure\033[0m\nor program ended");
     }
   Ehandler.rethrow();
   return ret;
