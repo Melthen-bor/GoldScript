@@ -1,5 +1,5 @@
-package com.gold.gold;
-import com.gold.gold.interpreter;
+//package com.gold.gold;
+//import com.gold.gold.interpreter;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
