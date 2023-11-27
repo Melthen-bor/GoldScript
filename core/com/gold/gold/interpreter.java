@@ -1,7 +1,7 @@
-package com.gold.gold;
+/*package com.gold.gold;
 import com.gold.gold.handlers.file_reader;
 import com.gold.gold.handlers.errorHandler;
-import com.gold.gold.handlers.goldException;
+import com.gold.gold.handlers.goldException;*/
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
