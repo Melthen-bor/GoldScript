@@ -9,12 +9,12 @@ public class interpreter{
     return o0+""+o1;
   }
   public static void interpreter(String[] args){
-    private final String[] custom = args;
+    final String[] custom = args;
   }
   public static String run(String file_name){
     try{
       String fileName = concate(file_name,".gd");
-      File_reader fileHandler = new File_reader(fileName);
+      file_reader fileHandler = new file_reader(fileName);
       String[] contents = fileHandler.read();
       int a = 1;
       int b = 0;
@@ -80,7 +80,7 @@ public class interpreter{
                 }
               }
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,concate(":","Error\[2\]:Failed to parse command \<goif\>")),"Command_error");
+              lastgolderror = new goldException(concate(inloc,concate(":","Error[2]:Failed to parse command \<goif\>")),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("go")){
@@ -89,7 +89,7 @@ public class interpreter{
               tempint = Integer.valueOf(parseInt(tempstring));
               b = tempint;
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,concate(":","Error\[1\]:Failed to parse command \<go\>")),"Command_error");
+              lastgolderror = new goldException(concate(inloc,concate(":","Error[1]:Failed to parse command \<go\>")),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("throw")){
@@ -104,7 +104,7 @@ public class interpreter{
                 temptype = "Thrown_error";
               }
             } catch(Exception e){
-              tempstring = "Error\[\?\]undefined";
+              tempstring = "Error[?]undefined";
               temptype = "Thrown_error";
             }
             lastgolderror = new goldException(concate(inloc,concate(":",tempstring)),temptype);
@@ -116,7 +116,7 @@ public class interpreter{
               tempinter = new interpreter();
               vars[tempint] = tempinter.run(tempstring);
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error\[3\]:failed to parse command \<import\>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[3\:failed to parse command \<import\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("return"){
@@ -124,7 +124,7 @@ public class interpreter{
               tempstring = command[1];
               ret = tempstring;
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error\[4\]:failed to parse command \<return\>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[4]:failed to parse command \<return\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("assign"){
@@ -133,11 +133,11 @@ public class interpreter{
               tempstring = command[2];
               vars[tempint] = tempstring;
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error\[5\]:Failed to parse command \<assign\>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command \<assign\>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else{
-            lastgolderror = new goldException(concate(inloc,concate(":","Error\[0\]:unknown command")),"Command_error");
+            lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
           }
           b += 1;
@@ -146,7 +146,7 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.println("Gold_interpreter:\033[31mError\[0\]:Critical failure\033[0m\nor program ended");
+      System.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m\nor program ended");
       Ehandler.rethrow();
     }
   }
