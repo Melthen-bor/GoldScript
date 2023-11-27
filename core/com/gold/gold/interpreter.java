@@ -49,6 +49,7 @@ public class interpreter{
           unparse = contents[b];
           command = unparse.split(" ");
           tempstring = command[0];
+          //This is where the included functions are defined
           if(tempstring.equals("goif")){
             try{
               tempstring = command[1];
