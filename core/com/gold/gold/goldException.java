@@ -8,8 +8,8 @@ public class goldExeception{
     return o0+""+o1;
   }
   public static void goldExeception(String error,String errortype){
-    final static String errormessage = concate("\033[31m",concate(error,"\033[0m")));
-    final static String type = errortype;
+    static String errormessage = concate("\033[31m",concate(error,"\033[0m")));
+    static String type = errortype;
   }
   public static String gettype(){
     return type;
