@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 public class file_reader{
-  public static void file_reader(String file_name){
+  public static void file_reader(static String file_name){
     static String fileName = file_name;
     static File file = new File(fileName);
   }
