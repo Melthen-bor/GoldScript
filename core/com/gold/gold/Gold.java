@@ -1,9 +1,9 @@
-package com.gold.gold;
+package gold;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import interpreter.interpreter;
+import gold.interpreter;
 public class Gold{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
