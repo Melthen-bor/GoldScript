@@ -17,6 +17,7 @@ public class interpreter{
   }
   public static String run(String file_name){
     String ret = "";
+    errorHandler Ehandler = new errorHandler();
     try{
       String fileName = concate(file_name,".gd");
       file_reader fileHandler = new file_reader(fileName);
@@ -41,9 +42,7 @@ public class interpreter{
       /*ScriptEngineManager manager = new ScriptEngineManager();
       ScriptEngine engine = new manager.getEngineByName("JavaScript");*/
       goldException lastgolderror;
-      errorHandler Ehandler = new errorHandler();
       interpreter tempinter;
-      
       String[] vars;
       while(a==1){
         try{
