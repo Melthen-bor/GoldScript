@@ -16,6 +16,7 @@ public class interpreter{
     final String[] custom = args;
   }
   public static String run(String file_name){
+    String ret = "";
     try{
       String fileName = concate(file_name,".gd");
       file_reader fileHandler = new file_reader(fileName);
@@ -42,7 +43,7 @@ public class interpreter{
       goldException lastgolderror;
       errorHandler Ehandler = new errorHandler();
       interpreter tempinter;
-      String ret = "";
+      
       String[] vars;
       while(a==1){
         try{
