@@ -1,13 +1,13 @@
 package com.gold.gold;
+import com.gold.gold.handlers.file_reader;
+import com.gold.gold.handlers.errorHandler;
+import com.gold.gold.handlers.goldException;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
-import com.gold.gold.file_reader;
-import com.gold.gold.errorHandler;
-import com.gold.gold.goldException;
 public class interpreter{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
