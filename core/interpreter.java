@@ -5,6 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
+import gold.file_reader;
+import gold.errorHandler;
+import gold.goldException;
 public class interpreter{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
