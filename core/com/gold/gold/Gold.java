@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import com.gold.gold.interpreter;
+import interpreter;
 public class Gold{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
