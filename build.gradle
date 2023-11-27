@@ -5,24 +5,24 @@ buildscript {
     }
     dependencies {
         //the R8 version bundled with AGP 8.1.0+ causes crashes on very old Android versions
-        classpath 'com.android.tools.build:gradle:8.0.2'
+        //classpath 'com.android.tools.build:gradle:8.0.2'
     }
 }
 
 allprojects {
 
     ext {
-        appName = 'Golden Pixel Dungeon'
-        appPackageName = 'com.goldenpixel.goldenpixeldungeon'
+        appName = 'Gold'
+        appPackageName = 'com.gold.gold'
 
-        appVersionCode = 754
+        appVersionCode = 1
         appVersionName = '0.0.1'
 
-        appJavaCompatibility = JavaVersion.VERSION_1_8
+        appJavaCompatibility = JavaVersion.VERSION_20
 
-        appAndroidCompileSDK = 33
-        appAndroidMinSDK = 14
-        appAndroidTargetSDK = 33
+        //appAndroidCompileSDK = 33
+        //appAndroidMinSDK = 14
+        //appAndroidTargetSDK = 33
 
         gdxVersion = '1.11.0'
         gdxControllersVersion = '2.2.4-SNAPSHOT'
