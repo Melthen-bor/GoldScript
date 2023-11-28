@@ -3,7 +3,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList
+import java.util.ArrayList;
 public class errorHandler{
   ArrayList<goldException> errors;
   int nexterror;
