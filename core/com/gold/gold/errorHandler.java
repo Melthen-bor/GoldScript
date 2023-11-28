@@ -29,7 +29,7 @@ public class errorHandler{
     int b = 0;
     while(a==1){
       try{
-        temperror = errors[b];
+        temperror = errors.get(b);
         temp = temperror.getmessage();
         temp = concate(temp,concate(", ",temperror.gettype));
         System.out.println(temp);
