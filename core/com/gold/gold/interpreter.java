@@ -97,9 +97,9 @@ public class interpreter{
             }
           } else if(tempstring.equals("throw")){
             try{
-              tempstring = command(1);
+              tempstring = command.get(1);
               try{
-                temptype = command(2);
+                temptype = command.get(2);
                 if(temptype.equals("Command_error"){
                   temptype = "Thrown_error";
                 }
@@ -114,8 +114,8 @@ public class interpreter{
             Ehandler.adderror(lastgolderror);
           } else if(tempstring.equals("import")){
             try{
-              tempstring = command(1);
-              tempint = Integer.valueOf(command(2));
+              tempstring = command.get(1);
+              tempint = Integer.valueOf(command.get(2));
               tempinter = new interpreter();
               vars.set(tempint,tempinter.run(tempstring));
             } catch(Exception e){
