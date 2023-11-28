@@ -9,7 +9,7 @@ public class errorHandler{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public static void errorHandler(){
+  public static errorHandler(){
     errors = new ArrayList<goldException>();
     nexterror = 0;
   }
