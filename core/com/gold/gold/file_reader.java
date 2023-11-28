@@ -30,8 +30,4 @@ public class file_reader{
     file.close();
     file = new File(file_name);
   }
-  public void close(){
-    file.close();
-    file = null;
-  }
 }
