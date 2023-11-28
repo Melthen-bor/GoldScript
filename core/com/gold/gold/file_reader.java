@@ -10,7 +10,7 @@ public class file_reader{
     String fileName = file_name;
     file = new File(fileName);
   }
-  public List read(){
+  public ArrayList read(){
     ArrayList<String> out = new ArrayList<String>();
     int a = 1;
     String temp;
