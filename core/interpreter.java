@@ -134,7 +134,14 @@ public class interpreter{
           } else if(tempstring.equals("return")){
             try{
               tempstring = command.get(1);
-              ret = tempstring;
+              if(tempstring.equals("custom")){
+                tempstring = command.get(2);
+                ret = tempstring;
+              } else if(tempstring.equals("variable")){
+                tempint = Integer.valueOf(command.get(2));
+                tempstring = vars.get(tempint);
+                ret = tempstring;
+              }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[4]:failed to parse command <return>"),"Command_error");
               Ehandler.adderror(lastgolderror);
