@@ -23,10 +23,10 @@ public class interpreter{
       String fileName = concate(file_name,".gd");
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
-      contents.addAll(Arrays.asList(fileHandler.read()));
+      contents.addAll(fileHandler.read());
       int a = 1;
       int b = 0;
-      ArrayList<String> command = new ArrayList<>();
+      ArrayList<String> command = new ArrayList<String>();
       String unparse;
       String inloc;
       try{
@@ -43,7 +43,7 @@ public class interpreter{
       String[] templist = {"a"};
       goldException lastgolderror;
       interpreter tempinter;
-      ArrayList<String> vars = new ArrayList<>();
+      ArrayList<String> vars = new ArrayList<String>();
       while(a==1){
         try{
           unparse = contents.get(b);
