@@ -11,7 +11,7 @@ public class file_reader{
     file = new File(fileName);
   }
   public ArrayList read(){
-    ArrayList<String> out = new ArrayList<String>();
+    ArrayList<String> out = new ArrayList<>();
     int a = 1;
     String temp;
     Scanner fileHandler = new Scanner(file);
