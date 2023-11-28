@@ -3,13 +3,13 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-public class goldExeception{
+public class goldException{
   String errormessage;
   String type;
   public String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public goldExeception(String error,String errortype){
+  public goldException(String error,String errortype){
     errormessage = concate("\033[31m",concate(error,"\033[0m")));
     type = errortype;
   }
