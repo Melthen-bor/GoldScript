@@ -9,13 +9,13 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 public class interpreter{
   ArrayList<String> custom = new ArrayList<String>();
-  public static String concate(Object o0,Object o1){
+  public String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public static interpreter(String[] args){
+  public interpreter(String[] args){
     custom.addAll(Arrays.asList(args));
   }
-  public static String run(String file_name){
+  public String run(String file_name){
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
