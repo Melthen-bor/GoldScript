@@ -6,6 +6,10 @@ import java.util.Arrays;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 public class interpreter{
@@ -24,6 +28,8 @@ public class interpreter{
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
       contents.addAll(fileHandler.read());
+      LocalDateTime time;
+      DateTimeFormatter timeformat;
       int a = 1;
       int b = 0;
       ArrayList<String> command = new ArrayList<String>();
@@ -140,6 +146,33 @@ public class interpreter{
               vars.set(tempint,tempstring);
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
+          } else if(tempstring.equals("time")){
+            try{
+              tempint = Integer.valueOf(command.get(1));
+              time = LocalDatetime.now();
+              tempstring = time.toString();
+              vars.set(tempint,tempstring);
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[6]:Failed to parse command <time>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
+          } else if(tempstring.equals("format")){
+            try{
+              tempstring = command.get(1);
+              tempint = Integer.valueOf(command.get(2));
+              if(tempstring.equals("time")){
+                tempstring = command.get(3);
+                timeformat = DateTimeFormatter.ofPattern(tempstring);
+                tempstring = time.format(timeformat);
+                command.set(tempint,tempstring);
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error");
+                Ehandler.adderror(lastgolderror);
+              }
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else{
