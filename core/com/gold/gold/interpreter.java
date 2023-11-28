@@ -40,8 +40,7 @@ public class interpreter{
       Integer tempintiii;
       String temptype;
       Object result;
-      tempstring = new String("a");
-      String[] templist = [tempstring];
+      String[] templist = {"a"};
       goldException lastgolderror;
       interpreter tempinter;
       ArrayList<String> vars = new ArrayList<String>();
