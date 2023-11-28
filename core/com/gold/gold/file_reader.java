@@ -1,24 +1,23 @@
-//package com.gold.gold.handlers;
+package gold;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 public class file_reader{
+  static File file;
   public static void file_reader(static String file_name){
     static String fileName = file_name;
-    static File file = new File(fileName);
+    file = new File(fileName);
   }
-  public static String[] read(){
-    String[] out;
+  public static List read(){
+    ArrayList<String> out = new ArrayList<String>();
     int a = 1;
-    int b = 0;
     String temp;
     Scanner fileHandler = new Scanner(file);
     while(a==1){
       try{
         temp = fileHandler.nextLine();
-        out[b] = temp;
-        b += 1;
+        out.add(temp);
       } catch(Exception e){
         a = 0;
       }
