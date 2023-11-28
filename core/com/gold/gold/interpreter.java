@@ -12,7 +12,7 @@ public class interpreter{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public interpreter(String[] args){
+  public static interpreter(String[] args){
     custom.addAll(Arrays.asList(args));
   }
   public static String run(String file_name){
