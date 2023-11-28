@@ -1,5 +1,4 @@
-//package com.gold.gold;
-//import com.gold.gold.handlers.goldException;
+package gold;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
