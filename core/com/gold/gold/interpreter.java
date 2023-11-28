@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 public class interpreter{
-  ArrayList<String> custom = new ArrayList<String>();
+  ArrayList<String> custom = new ArrayList<>();
   public String concate(Object o0,Object o1){
     return o0+""+o1;
   }
@@ -26,7 +26,7 @@ public class interpreter{
       contents.addAll(Arrays.asList(fileHandler.read()));
       int a = 1;
       int b = 0;
-      ArrayList<String> command = new ArrayList<String>();
+      ArrayList<String> command = new ArrayList<>();
       String unparse;
       String inloc;
       try{
@@ -43,7 +43,7 @@ public class interpreter{
       String[] templist = {"a"};
       goldException lastgolderror;
       interpreter tempinter;
-      ArrayList<String> vars = new ArrayList<String>();
+      ArrayList<String> vars = new ArrayList<>();
       while(a==1){
         try{
           unparse = contents.get(b);
