@@ -2,6 +2,7 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Arrays;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -13,7 +14,7 @@ public class interpreter{
     return o0+""+o1;
   }
   public interpreter(String[] args){
-    custom.addAll(Arrays.asList(args));
+    custom.addAll(Array.asList(args));
   }
   public String run(String file_name){
     String ret = "";
