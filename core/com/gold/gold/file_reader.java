@@ -6,7 +6,7 @@ import java.io.IOException;
 public class file_reader{
   File file;
   public file_reader(static String file_name){
-    static String fileName = file_name;
+    String fileName = file_name;
     file = new File(fileName);
   }
   public List read(){
