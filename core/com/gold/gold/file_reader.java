@@ -6,7 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 public class file_reader{
   File file;
-  public file_reader(static String file_name){
+  public file_reader(String file_name){
     String fileName = file_name;
     file = new File(fileName);
   }
