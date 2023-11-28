@@ -9,19 +9,19 @@ public class errorHandler{
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
-  public static errorHandler(){
+  public errorHandler(){
     errors = new ArrayList<goldException>();
     nexterror = 0;
   }
-  public static void adderror(goldException error){
+  public void adderror(goldException error){
     errors.add(error);
     nexterror += 1;
   }
-  public static void removeerror(){
+  public void removeerror(){
     errors.remove(nexterror);
     nexterror -= 1;
   }
-  public static void rethrow(){
+  public void rethrow(){
     int a = 1;
     goldException temperror;
     String temp;
