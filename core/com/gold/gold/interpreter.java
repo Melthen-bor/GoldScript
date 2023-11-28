@@ -14,7 +14,7 @@ public class interpreter{
     return o0+""+o1;
   }
   public interpreter(String[] args){
-    custom.addAll(Array.asList(args));
+    custom.addAll(Arrays.asList(args));
   }
   public String run(String file_name){
     String ret = "";
@@ -47,7 +47,7 @@ public class interpreter{
       while(a==1){
         try{
           unparse = contents.get(b);
-          command.addAll(Array.asList(unparse.split(" ")));
+          command.addAll(Arrays.asList(unparse.split(" ")));
           tempstring = command.get(0);
           //This is where the included functions are defined
           if(tempstring.equals("goif")){
