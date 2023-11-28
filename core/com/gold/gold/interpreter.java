@@ -40,7 +40,7 @@ public class interpreter{
       Integer tempintiii;
       String temptype;
       Object result;
-      String[] templist = ["a"];
+      String[] templist = [new String("a"),new String("b")];
       goldException lastgolderror;
       interpreter tempinter;
       ArrayList<String> vars = new ArrayList<String>();
@@ -122,7 +122,7 @@ public class interpreter{
               tempinter = new interpreter(templist);
               vars.set(tempint,tempinter.run(tempstring));
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[3:failed to parse command <import>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[3]:failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("return")){
@@ -153,7 +153,7 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.out.println("Gold_interpreter:\033[31mError[0\]:Critical failure\033[0m\nor program ended");
+      System.out.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m\nor program ended");
     }
   Ehandler.rethrow();
   return ret;
