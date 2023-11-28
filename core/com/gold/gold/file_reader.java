@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 public class file_reader{
   File file;
   public file_reader(static String file_name){
@@ -29,7 +30,7 @@ public class file_reader{
     file.close();
     file = new File(file_name);
   }
-  public static void close(){
+  public void close(){
     file.close();
     file = null;
   }
