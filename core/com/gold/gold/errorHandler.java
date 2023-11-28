@@ -4,20 +4,22 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 public class errorHandler{
+  ArrayList<goldException> errors;
+  int nexterror;
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
   public static void errorHandler(){
-    private static goldException[] errors;
-    private static int nexterror;
+    errors = new ArrayList<goldException>();
+    nexterror = 0;
   }
   public static void adderror(goldException error){
-    errors[nexterror] = error;
+    errors.add(error);
     nexterror += 1;
   }
   public static void removeerror(){
+    errors.remove(nexterror);
     nexterror -= 1;
-    errors[nexterror] = null;
   }
   public static void rethrow(){
     int a = 1;
