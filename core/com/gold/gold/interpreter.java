@@ -39,6 +39,7 @@ public class interpreter{
       Integer tempintiii;
       String temptype;
       Object result;
+      String[] templist = ["a"];
       goldException lastgolderror;
       interpreter tempinter;
       ArrayList<String> vars = new ArrayList<String>();
@@ -116,7 +117,8 @@ public class interpreter{
             try{
               tempstring = command.get(1);
               tempint = Integer.valueOf(command.get(2));
-              tempinter = new interpreter();
+              templist[0] = command.get(3);
+              tempinter = new interpreter(templist);
               vars.set(tempint,tempinter.run(tempstring));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3:failed to parse command <import>"),"Command_error");
