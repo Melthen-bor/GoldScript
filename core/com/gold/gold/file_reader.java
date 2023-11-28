@@ -27,7 +27,6 @@ public class file_reader{
     return out;
   }
   public void change(String file_name){
-    file.close();
     file = new File(file_name);
   }
 }
