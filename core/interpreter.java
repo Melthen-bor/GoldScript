@@ -115,7 +115,7 @@ public class interpreter{
                 temptype = "Thrown_error";
               }
             } catch(Exception e){
-              tempstring = "Error[?]undefined";
+              tempstring = "Error[?]:undefined";
               temptype = "Thrown_error";
             }
             lastgolderror = new goldException(concate(inloc,concate(":",tempstring)),temptype);
