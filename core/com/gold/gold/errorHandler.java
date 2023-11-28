@@ -31,7 +31,7 @@ public class errorHandler{
       try{
         temperror = errors.get(b);
         temp = temperror.getmessage();
-        temp = concate(temp,concate(", ",temperror.gettype));
+        temp = concate(temp,concate(", ",temperror.gettype()));
         System.out.println(temp);
         b += 1;
       } catch(Exception e){
