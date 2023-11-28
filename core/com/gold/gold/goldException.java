@@ -10,7 +10,7 @@ public class goldException{
     return o0+""+o1;
   }
   public goldException(String error,String errortype){
-    errormessage = concate("\033[31m",concate(error,"\033[0m")));
+    errormessage = concate("\033[31m",concate(error,"\033[0m"));
     type = errortype;
   }
   public String gettype(){
