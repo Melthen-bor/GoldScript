@@ -19,5 +19,9 @@ class errorHandler:
       try:
         d=errors[c]
         b=d.getmessage()
+        b+=","
+        b+=d.gettype()
+        print(b)
+        c+=1
       except:
         a=0
