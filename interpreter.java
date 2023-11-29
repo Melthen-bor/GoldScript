@@ -1,4 +1,4 @@
-//package gold;
+package gold;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -173,7 +173,7 @@ public class interpreter{
                 tempstring = command.get(3);
                 timeformat = DateTimeFormatter.ofPattern(tempstring);
                 tempstring = time.format(timeformat);
-                command.set(tempint,tempstring);
+                vars.set(tempint,tempstring);
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error");
                 Ehandler.adderror(lastgolderror);
@@ -184,8 +184,18 @@ public class interpreter{
             }
           } else if(tempstring.equals("out")){
             try{
+              tempstring = command.get(1);
+              if(tempstring.equals("variable")){
+                tempint = Integer.valueOf(command.get(2));
+                tempstring = 
+              } else if(tempstring.equals("string")){
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
+                Ehandler.adderror(lastgolderror);
+              }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
             }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
