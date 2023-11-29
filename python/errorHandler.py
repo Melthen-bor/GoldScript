@@ -12,4 +12,8 @@ class errorHandler:
     errors-=[error]
     nexterror-=1
   def rethrow(self):
-    
+    a=1
+    b=""
+    c=0
+    while a==1:
+      
