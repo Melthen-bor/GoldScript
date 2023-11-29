@@ -24,7 +24,7 @@ public class interpreter{
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
-      String fileName = concate(file_name,".gd");
+      String fileName = concate(file_name,".gs");
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
       contents.addAll(fileHandler.read());
