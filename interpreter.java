@@ -24,7 +24,7 @@ public class interpreter{
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
-      String fileName = concate(file_name,".gs");
+      String fileName = concate(file_name,".gold");
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
       contents.addAll(fileHandler.read());
@@ -187,8 +187,11 @@ public class interpreter{
               tempstring = command.get(1);
               if(tempstring.equals("variable")){
                 tempint = Integer.valueOf(command.get(2));
-                tempstring = 
+                tempstring = vars.get(tempint);
+                System.out.print(tempstring);
               } else if(tempstring.equals("string")){
+                tempstring = command.get(2);
+                System.out.print(tempstring);
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
                 Ehandler.adderror(lastgolderror);
