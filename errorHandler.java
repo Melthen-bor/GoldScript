@@ -1,4 +1,4 @@
-//package gold;
+/package gold;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
