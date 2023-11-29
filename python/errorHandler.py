@@ -16,4 +16,8 @@ class errorHandler:
     b=""
     c=0
     while a==1:
-      
+      try:
+        d=errors[c]
+        b=d.getmessage()
+      except:
+        a=0
