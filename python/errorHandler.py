@@ -5,4 +5,11 @@ class errorHandler:
   created="no"
   def _init_(self):
     created="yes"
-  def 
+  def adderror(self,error):
+    errors+=[error]
+    nexterror+=1
+  def removeerror(self,error):
+    errors-=[error]
+    nexterror-=1
+  def rethrow(self):
+    
