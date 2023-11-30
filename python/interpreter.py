@@ -1,5 +1,4 @@
 import datetime
-import errorHandler
 class goldException():
   message=""
   type=""
@@ -10,6 +9,32 @@ class goldException():
     return self.message
   def gettype(self):
     return self.type
+class errorHandler:
+  errors=[]
+  nexterror=0
+  created="no"
+  def _init_(self):
+    created="yes"
+  def adderror(self,error):
+    errors+=[error]
+    nexterror+=1
+  def removeerror(self,error):
+    errors-=[error]
+    nexterror-=1
+  def rethrow(self):
+    a=1
+    b=""
+    c=0
+    while a==1:
+      try:
+        d=errors[c]
+        b=d.getmessage()
+        b+=","
+        b+=d.gettype()
+        print(b)
+        c+=1
+      except:
+        a=0
 class interpreter:
   custom=[]
   def concate(self,s1,s2):
