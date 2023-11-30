@@ -65,27 +65,27 @@ public class interpreter{
               tempintiii = Integer.valueOf(command.get(4));
               tempintii = Integer.valueOf(vars.get(tempintii));
               tempintiii = Integer.valueOf(vars.get(tempintiii));
-              if(tempstring.equals("equals")){
+              if(tempstring.equals("==")){
                 if(tempintii==tempintiii){
                   b = tempint;
                 }
-              } else if(tempstring.equals("greater_than")){
+              } else if(tempstring.equals(">")){
                 if(tempintii>tempintiii){
                   b = tempint;
                 }
-              } else if(tempstring.equals("less_than")){
+              } else if(tempstring.equals("<")){
                 if(tempintii<tempintiii){
                   b = tempint;
                 }
-              } else if(tempstring.equals("greater_or_equals")){
+              } else if(tempstring.equals(">=")){
                 if(tempintii>=tempintiii){
                   b = tempint;
                 }
-              } else if(tempstring.equals("less_or_equals")){
+              } else if(tempstring.equals("<=")){
                 if(tempintii<=tempintiii){
                   b = tempint;
                 }
-              } else if(tempstring.equals("not")){
+              } else if(tempstring.equals("!=")){
                 if(tempintii!=tempintiii){
                   b = tempint;
                 }
