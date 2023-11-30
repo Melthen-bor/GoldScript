@@ -1,3 +1,10 @@
 time 0
-format MM 0
+implement 1
+assign 2 0
+assign 3 1
+goif
+goif
+format time MM 0
+go 9
+format time %m 0
 return variable 0
