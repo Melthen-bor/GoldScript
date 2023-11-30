@@ -1,3 +1,6 @@
 time 0
-format HH 0
+implement 1
+assign 2 0
+assign 3 1
+format time HH 0
 return variable 0
