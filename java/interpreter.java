@@ -91,6 +91,7 @@ public class interpreter{
                 }
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[2]:Failed to parse command <goif>"),"Command_error");
+                Ehandler.adderror(lastgolderror);
               }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error[2]:Failed to parse command <goif>")),"Command_error");
