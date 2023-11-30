@@ -206,6 +206,14 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          } else if(tempstring.equals("implement")){
+            try{
+              tempint=Integer.valueOf(command.get(1));
+              vars.set(tempint,"0");
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
