@@ -89,6 +89,8 @@ public class interpreter{
                 if(tempintii!=tempintiii){
                   b = tempint;
                 }
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[2]:Failed to parse command <goif>"),"Command_error");
               }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error[2]:Failed to parse command <goif>")),"Command_error");
