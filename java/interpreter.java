@@ -131,7 +131,7 @@ public class interpreter{
               tempinter = new interpreter(templist);
               vars.set(tempint,tempinter.run(tempstring));
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[3]:failed to parse command <import>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("return")){
@@ -144,9 +144,12 @@ public class interpreter{
                 tempint = Integer.valueOf(command.get(2));
                 tempstring = vars.get(tempint);
                 ret = tempstring;
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error");
+                Ehandler.adderror(lastgolderror);
               }
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[4]:failed to parse command <return>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("assign")){
