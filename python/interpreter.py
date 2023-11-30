@@ -193,6 +193,13 @@ class interpreter:
           except:
             lastgolderror=goldException(self.concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error")
             Ehandler.adderror(lastgolderror)
+        elif tempstring=="implement":
+          try:
+            tempint=int(command[1])
+            vars[tempint]="1"
+          except:
+            lastgolderror=goldException(self.concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error")
+            Ehandler.adderror(lastgolderror)
         else:
           lastgolderror=goldException(self.concate(inloc,":Error[0]:Unknown command"),"Command_error")
           Ehandler.adderror(lastgolderror)
