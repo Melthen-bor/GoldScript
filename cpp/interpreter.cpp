@@ -24,7 +24,6 @@ string split(string tosplit,string delim, int num){
   }
   return templist[num];
 }
-
 int main(){
   
 }
