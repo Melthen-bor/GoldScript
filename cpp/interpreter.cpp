@@ -9,11 +9,22 @@ string read_file(string file_name){
   string tempstring;
   ifstream file(file_name);
   while(getline(file,tempstring)){
-    output=concate(output,tempstring);
+    output=concate(output,concate("\n",tempstring));
   }
   file.close();
   return output;
 }
+string split(string tosplit,string delim, int num){
+  string output = "";
+  string[255] templist;
+  string tempstring;
+  int x=0;
+  while(getline(tosplit,tempstring,delim)){
+    templist[x]=tempstring;
+  }
+  return templist[num];
+}
+
 int main(){
-  string[] 
+  
 }
