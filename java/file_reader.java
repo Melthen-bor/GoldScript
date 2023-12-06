@@ -14,11 +14,7 @@ public class file_reader{
     ArrayList<String> out = new ArrayList<String>();
     int a = 1;
     String temp;
-    try{
       Scanner fileHandler = new Scanner(file);
-    } catch(Exception e){
-      System.out.print("");
-    }
     while(a==1){
       try{
         temp = fileHandler.nextLine();
