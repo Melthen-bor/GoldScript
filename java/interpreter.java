@@ -52,10 +52,11 @@ public class interpreter{
       ArrayList<String> vars = new ArrayList<String>();
       while(a==1){
         try{
+          //This is where the included functions are defined and parsed
           unparse = contents.get(b);
           command.addAll(Arrays.asList(unparse.split(" ")));
           tempstring = command.get(0);
-          //This is where the included functions are defined
+          //included::goif
           if(tempstring.equals("goif")){
             try{
               tempstring = command.get(1);
@@ -65,6 +66,7 @@ public class interpreter{
               tempintiii = Integer.valueOf(command.get(4));
               tempintii = Integer.valueOf(vars.get(tempintii));
               tempintiii = Integer.valueOf(vars.get(tempintiii));
+              //these are the possible operations
               if(tempstring.equals("==")){
                 if(tempintii==tempintiii){
                   b = tempint;
@@ -89,6 +91,7 @@ public class interpreter{
                 if(tempintii!=tempintiii){
                   b = tempint;
                 }
+              //throws goldException if something is wrong
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[2]:Failed to parse command <goif>"),"Command_error");
                 Ehandler.adderror(lastgolderror);
@@ -97,6 +100,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,concate(":","Error[2]:Failed to parse command <goif>")),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::go
           } else if(tempstring.equals("go")){
             try{
               tempstring = command.get(1);
@@ -106,6 +110,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,concate(":","Error[1]:Failed to parse command <go>")),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::throw
           } else if(tempstring.equals("throw")){
             try{
               tempstring = command.get(1);
@@ -123,6 +128,7 @@ public class interpreter{
             }
             lastgolderror = new goldException(concate(inloc,concate(":",tempstring)),temptype);
             Ehandler.adderror(lastgolderror);
+          //included::import
           } else if(tempstring.equals("import")){
             try{
               tempstring = command.get(1);
@@ -134,6 +140,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::return
           } else if(tempstring.equals("return")){
             try{
               tempstring = command.get(1);
@@ -152,6 +159,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::assign
           } else if(tempstring.equals("assign")){
             try{
               tempint = Integer.valueOf(command.get(1));
@@ -161,6 +169,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::time
           } else if(tempstring.equals("time")){
             try{
               tempint = Integer.valueOf(command.get(1));
@@ -171,6 +180,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[6]:Failed to parse command <time>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::format
           } else if(tempstring.equals("format")){
             try{
               tempstring = command.get(1);
@@ -188,6 +198,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::out
           } else if(tempstring.equals("out")){
             try{
               tempstring = command.get(1);
