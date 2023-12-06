@@ -28,7 +28,7 @@ public class interpreter{
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
       contents.addAll(fileHandler.read());
-      LocalDateTime time;
+      LocalDateTime time = LocalDateTime.now();
       DateTimeFormatter timeformat;
       int a = 1;
       int b = 0;
