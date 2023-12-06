@@ -173,7 +173,7 @@ public class interpreter{
           } else if(tempstring.equals("time")){
             try{
               tempint = Integer.valueOf(command.get(1));
-              time = LocalDatetime.now();
+              time = LocalDateTime.now();
               tempstring = time.toString();
               vars.set(tempint,tempstring);
             } catch(Exception e){
