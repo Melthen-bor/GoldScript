@@ -217,6 +217,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::implement
           } else if(tempstring.equals("implement")){
             try{
               tempint=Integer.valueOf(command.get(1));
