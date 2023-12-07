@@ -41,9 +41,10 @@ public class interpreter{
         inloc = "Gold_Program";
       }
       String tempstring;
-      Integer tempint;
+      int tempint;
       Integer tempintii;
       Integer tempintiii;
+      Integer tempintiv;
       String temptype;
       Object result;
       String[] templist = {"a"};
@@ -60,7 +61,7 @@ public class interpreter{
           if(tempstring.equals("goif")){
             try{
               tempstring = command.get(1);
-              tempint = Integer.valueOf(tempstring);
+              tempint = Integer.parseInt(tempstring);
               tempstring = command.get(2);
               tempintii = Integer.valueOf(command.get(3));
               tempintiii = Integer.valueOf(command.get(4));
@@ -104,7 +105,7 @@ public class interpreter{
           } else if(tempstring.equals("go")){
             try{
               tempstring = command.get(1);
-              tempint = Integer.valueOf(tempstring);
+              tempint = Integer.parseInt(tempstring);
               b = tempint;
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,concate(":","Error[1]:Failed to parse command <go>")),"Command_error");
@@ -132,7 +133,7 @@ public class interpreter{
           } else if(tempstring.equals("import")){
             try{
               tempstring = command.get(1);
-              tempint = Integer.valueOf(command.get(2));
+              tempint = Integer.parseInt(command.get(2));
               templist[0] = command.get(3);
               tempinter = new interpreter(templist);
               vars.set(tempint,tempinter.run(tempstring));
@@ -148,7 +149,7 @@ public class interpreter{
                 tempstring = command.get(2);
                 ret = tempstring;
               } else if(tempstring.equals("variable")){
-                tempint = Integer.valueOf(command.get(2));
+                tempint = Integer.parseInt(command.get(2));
                 tempstring = vars.get(tempint);
                 ret = tempstring;
               } else{
@@ -162,7 +163,7 @@ public class interpreter{
           //included::assign
           } else if(tempstring.equals("assign")){
             try{
-              tempint = Integer.valueOf(command.get(1));
+              tempint = Integer.parseInt(command.get(1));
               tempstring = command.get(2);
               vars.set(tempint,tempstring);
             } catch(Exception e){
@@ -172,7 +173,7 @@ public class interpreter{
           //included::time
           } else if(tempstring.equals("time")){
             try{
-              tempint = Integer.valueOf(command.get(1));
+              tempint = Integer.parseInt(command.get(1));
               time = LocalDateTime.now();
               tempstring = time.toString();
               vars.set(tempint,tempstring);
@@ -184,7 +185,7 @@ public class interpreter{
           } else if(tempstring.equals("format")){
             try{
               tempstring = command.get(1);
-              tempint = Integer.valueOf(command.get(2));
+              tempint = Integer.parseInt(command.get(2));
               if(tempstring.equals("time")){
                 tempstring = command.get(3);
                 timeformat = DateTimeFormatter.ofPattern(tempstring);
@@ -203,7 +204,7 @@ public class interpreter{
             try{
               tempstring = command.get(1);
               if(tempstring.equals("variable")){
-                tempint = Integer.valueOf(command.get(2));
+                tempint = Integer.parseInt(command.get(2));
                 tempstring = vars.get(tempint);
                 System.out.print(tempstring);
               } else if(tempstring.equals("string")){
@@ -220,7 +221,7 @@ public class interpreter{
           //included::implement
           } else if(tempstring.equals("implement")){
             try{
-              tempint=Integer.valueOf(command.get(1));
+              tempint=Integer.parseInt(command.get(1));
               vars.set(tempint,"0");
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error");
