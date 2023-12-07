@@ -3,8 +3,8 @@
 ## Supported Versions
 | Version | Supported | Implementation |
 | ------- | --------- | -------------- |
-| 0.0.X   | ✅       |  Java          |
-| 0.0.X   | ✅       | Python         |
+| 0.0.X   | ✅       | Java           |
+| 0.0.X   | ❎       | Python         |
 | 0.0.X   | ❎       | C++            |
 
 ## Reporting a Vulnerability
