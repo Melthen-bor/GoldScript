@@ -11,6 +11,6 @@ public class Gold{
     String file = args[0];
     String[] intargs = args[1].split("[split]");
     interpreter inter = new interpreter(intargs);
-    inter.run(args[2]);
+    inter.run(file);
   }
 }
