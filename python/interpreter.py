@@ -121,93 +121,93 @@ class interpreter:
             temptype="Thrown_error"
           lastgolderror=goldException(self.concate(inloc,self.concate(":",tempstring)),temptype)
           Ehandler.adderror(lastgolderror)
-          elif tempstring=="import":
-            try:
-              tempstring=command[1]
-              tempint=int(command[2])
-              templist[0]=command[3]
-              tempinter=inerpreter(templist)
-              vars[tempint]=tempinter.run(tempstring)
-            except:
-              lastgolderror=goldException(self.concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error")
-              Ehandler.adderror(lastgolderror)
-          elif tempstring=="return":
-            try:
-              tempstring=command[1]
-              if tempstring=="custom":
-                tempstring=command[2]
-                ret=tempstring
-              elif tempstring=="variable":
-                tempint=int(command[2])
-                tempstring=vars[tempint]
-                ret=tempstring
-              else:
-                lastgolderror=goldException(self.concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error")
-                Ehandler.adderror(lastgolderror)
-            except:
-              lastgolderror=goldException(self.concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error")
-              Ehandler.adderror(lastgolderror)
-          elif tempstring=="assign":
-            try:
-              tempint=int(command[1])
-              tempstring=command[2]
-              vars[tempint]=tempstring
-            except:
-              lastgolderror=goldException(self.concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error")
-              Ehandler.adderror(lastgolderror)
-          elif tempstring=="time":
-            try:
-              tempint=int(command[1])
-              time=datetime.datetime.now()
-              vars[tempint]=Str(time)
-            except:
-              lastgolderror=goldException(self.concate(inloc,":Error[6]:Failed to parse command <time>"),"Command_error")
-              Ehandler.adderror(lastgolderror)
-          elif tempstring=="format":
-            try:
-              tempstring=command[1]
-              tempint=int(command[2])
-              if tempstring=="time":
-                tempstring=command[3]
-                timestring=time.strftime(tempstring)
-                vars[tempint]=tempstring
-              else:
-                lastgolderror=goldException(self.concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error")
-                Ehandler.adderror(lastgolderror)
-            except:
-              lastgolderror=goldException(self.concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error")
-              Ehandler.adderror(lastgolderror)
-        elif tempstring=="out":
+        elif tempstring=="import":
           try:
             tempstring=command[1]
-            if tempstring=="variable":
+            tempint=int(command[2])
+             templist[0]=command[3]
+            tempinter=inerpreter(templist)
+            vars[tempint]=tempinter.run(tempstring)
+           except:
+             lastgolderror=goldException(self.concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error")
+             Ehandler.adderror(lastgolderror)
+         elif tempstring=="return":
+           try:
+             tempstring=command[1]
+             if tempstring=="custom":
+              tempstring=command[2]
+              ret=tempstring
+            elif tempstring=="variable":
               tempint=int(command[2])
               tempstring=vars[tempint]
-              print(tempstring)
-            elif tempstring=="custom":
-              tempstring=command[2]
-              print(tempstring)
+              ret=tempstring
             else:
-              lastgolderror=goldException(self.concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error")
+              lastgolderror=goldException(self.concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error")
               Ehandler.adderror(lastgolderror)
           except:
-            lastgolderror=goldException(self.concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error")
-            Ehandler.adderror(lastgolderror)
-        elif tempstring=="implement":
+             lastgolderror=goldException(self.concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error")
+             Ehandler.adderror(lastgolderror)
+         elif tempstring=="assign":
           try:
             tempint=int(command[1])
-            vars[tempint]="1"
+            tempstring=command[2]
+             vars[tempint]=tempstring
           except:
-            lastgolderror=goldException(self.concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error")
+            lastgolderror=goldException(self.concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error")
             Ehandler.adderror(lastgolderror)
-        else:
-          lastgolderror=goldException(self.concate(inloc,":Error[0]:Unknown command"),"Command_error")
+         elif tempstring=="time":
+          try:
+            tempint=int(command[1])
+             time=datetime.datetime.now()
+             vars[tempint]=Str(time)
+           except:
+            lastgolderror=goldException(self.concate(inloc,":Error[6]:Failed to parse command <time>"),"Command_error")
+            Ehandler.adderror(lastgolderror)
+         elif tempstring=="format":
+          try:
+            tempstring=command[1]
+            tempint=int(command[2])
+            if tempstring=="time":
+              tempstring=command[3]
+              timestring=time.strftime(tempstring)
+              vars[tempint]=tempstring
+            else:
+              lastgolderror=goldException(self.concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error")
+              Ehandler.adderror(lastgolderror)
+          except:
+            lastgolderror=goldException(self.concate(inloc,":Error[7]:Failed to parse command <format>"),"Command_error")
+            Ehandler.adderror(lastgolderror)
+      elif tempstring=="out":
+        try:
+          tempstring=command[1]
+          if tempstring=="variable":
+            tempint=int(command[2])
+            tempstring=vars[tempint]
+            print(tempstring)
+          elif tempstring=="custom":
+            tempstring=command[2]
+            print(tempstring)
+          else:
+            lastgolderror=goldException(self.concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error")
+            Ehandler.adderror(lastgolderror)
+        except:
+          lastgolderror=goldException(self.concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error")
           Ehandler.adderror(lastgolderror)
-        b+=1
-      except:
-        a=0
-        Ehandler.rethrow()
-        return ret
+      elif tempstring=="implement":
+        try:
+          tempint=int(command[1])
+          vars[tempint]="1"
+        except:
+          lastgolderror=goldException(self.concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error")
+          Ehandler.adderror(lastgolderror)
+      else:
+        lastgolderror=goldException(self.concate(inloc,":Error[0]:Unknown command"),"Command_error")
+        Ehandler.adderror(lastgolderror)
+      b+=1
+    except:
+      a=0
+      Ehandler.rethrow()
+      return ret
 if __name__=="__main__":
   file=input()
   inter=interpreter()
