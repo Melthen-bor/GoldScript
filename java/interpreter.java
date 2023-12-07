@@ -28,6 +28,7 @@ public class interpreter{
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
       contents.addAll(fileHandler.read());
+      Scanner inputHandler = new Scanner(System.in);
       LocalDateTime time = LocalDateTime.now();
       DateTimeFormatter timeformat;
       int a = 1;
@@ -226,12 +227,18 @@ public class interpreter{
           //included::implement
           } else if(tempstring.equals("implement")){
             try{
-              tempint=Integer.parseInt(command.get(1));
+              tempint = Integer.parseInt(command.get(1));
               vars.set(tempint,"0");
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[9]:Failed to parse command <implement>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          //included::input
+          } else if(tempstring.equals("input")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+              tempstring = inputHandler.nextLine();
+              vars.set(tempint,tempstring);
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
