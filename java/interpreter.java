@@ -47,7 +47,7 @@ public class interpreter{
       Integer tempintiv;
       String temptype;
       Object result;
-      String[] templist = {"a"};
+      String[] templist = {"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",};
       goldException lastgolderror;
       interpreter tempinter;
       ArrayList<String> vars = new ArrayList<String>();
