@@ -239,6 +239,10 @@ public class interpreter{
               tempint = Integer.parseInt(command.get(1));
               tempstring = inputHandler.nextLine();
               vars.set(tempint,tempstring);
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[10]:Failed to parse command <input>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
