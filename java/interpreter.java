@@ -211,6 +211,10 @@ public class interpreter{
               } else if(tempstring.equals("string")){
                 tempstring = command.get(2);
                 System.out.print(tempstring);
+              } else if(tempstring.equals("return")){
+                System.out.print("\r");
+              } else if(tempstring.equals("new")){
+                System.out.print("\n");
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[8]:Failed to parse command <out>"),"Command_error");
                 Ehandler.adderror(lastgolderror);
