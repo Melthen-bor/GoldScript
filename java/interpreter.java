@@ -51,6 +51,7 @@ public class interpreter{
       goldException lastgolderror;
       interpreter tempinter;
       ArrayList<String> vars = new ArrayList<String>();
+      vars.addAll(Arrays.asList(templist));
       while(a==1){
         try{
           //This is where the included functions are defined and parsed
