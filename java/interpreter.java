@@ -21,9 +21,9 @@ public class interpreter{
     custom.addAll(Arrays.asList(args));
   }
   public String run(String file_name){
-    String ret = "";
-    errorHandler Ehandler = new errorHandler();
     try{
+      String ret = "";
+      errorHandler Ehandler = new errorHandler();
       String fileName = concate(file_name,".gold");
       file_reader fileHandler = new file_reader(fileName);
       ArrayList<String> contents = new ArrayList<String>();
