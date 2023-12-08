@@ -1,4 +1,5 @@
 import datetime
+#not truly functional
 class goldException():
   message=""
   type=""
