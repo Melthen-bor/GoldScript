@@ -44,9 +44,9 @@ public class interpreter{
       }
       String tempstring;
       int tempint;
-      Integer tempintii;
-      Integer tempintiii;
-      Integer tempintiv;
+      Float tempintii;
+      Float tempintiii;
+      Float tempintiv;
       String temptype;
       Object result;
       String[] templist = {"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",};
@@ -66,10 +66,10 @@ public class interpreter{
               tempstring = command.get(1);
               tempint = Integer.parseInt(tempstring);
               tempstring = command.get(2);
-              tempintii = Integer.valueOf(command.get(3));
-              tempintiii = Integer.valueOf(command.get(4));
-              tempintii = Integer.valueOf(vars.get(tempintii));
-              tempintiii = Integer.valueOf(vars.get(tempintiii));
+              tempintii = Float.valueFloat(command.get(3));
+              tempintiii = Float.valueFloat(command.get(4));
+              tempintii = Float.valueFloat(vars.get(tempintii));
+              tempintiii = Float.valueFloat(vars.get(tempintiii));
               //these are the possible operations
               if(tempstring.equals("==")){
                 if(tempintii==tempintiii){
@@ -248,10 +248,10 @@ public class interpreter{
           } else if(tempstring.equals("add")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Integer.valueOf(command.get(2)));
-              tempintiii = vars.get(Integer.valueOf(command.get(3)));
+              tempintii = vars.get(Float.valueFloat(command.get(2)));
+              tempintiii = vars.get(Float.valueFloat(command.get(3)));
               tempintiv = tempintii+tempintiii;
-              vars.set(tempint,Integer.toString(tempintiv));
+              vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <add>"),"Command_error");
               Ehandler.adderror(lastgolderror);
@@ -260,10 +260,10 @@ public class interpreter{
           } else if(tempstring.equals("multiply")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Integer.valueOf(command.get(2)));
-              tempintiii = vars.get(Integer.valueOf(command.get(3)));
+              tempintii = vars.get(Float.valueFloat(command.get(2)));
+              tempintiii = vars.get(Float.valueFloat(command.get(3)));
               tempintiv = tempintii*tempintiii;
-              vars.set(tempint,Integer.toString(tempintiv));
+              vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[12]:Failed to parse command <multiply>"),"Command_error");
               Ehandler.adderror(lastgolderror);
@@ -272,10 +272,10 @@ public class interpreter{
           } else if(tempstring.equals("raise")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Integer.valueOf(command.get(2)));
-              tempintiii = vars.get(Integer.valueOf(command.get(3)));
+              tempintii = vars.get(Float.valueFloat(command.get(2)));
+              tempintiii = vars.get(Float.valueFloat(command.get(3)));
               tempintiv = Math.pow(tempintii,tempintiii);
-              vars.set(tempint,Integer.toString(tempintiv));
+              vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[13]:Failed to parse command <raise>"),"Command_error");
               Ehandler.adderror(lastgolderror):
