@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
-import java
+import java.lang.Math;
 public class interpreter{
   ArrayList<String> custom = new ArrayList<>();
   public String concate(Object o0,Object o1){
@@ -255,7 +255,7 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <add>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
-          } else if (tempstring.equals("multiply")){
+          } else if(tempstring.equals("multiply")){
             try{
               tempint = Integer.parseInt(command.get(1));
               tempintii = vars.get(Integer.valueOf(command.get(2)));
@@ -265,6 +265,17 @@ public class interpreter{
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[12]:Failed to parse command <multiply>"),"Command_error");
               Ehandler.adderror(lastgolderror);
+            }
+          } else if(tempstring.equals("raise")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+              tempintii = vars.get(Integer.valueOf(command.get(2)));
+              tempintiii = vars.get(Integer.valueOf(command.get(3)));
+              tempintiv = Math.pow(tempintii,tempintiii);
+              vars.set(tempint,Integer.toString(tempintiv));
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[13]:Failed to parse command <raise>"),"Command_error");
+              Ehandler.adderror(lastgolderror):
             }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
