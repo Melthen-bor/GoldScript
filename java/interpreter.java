@@ -20,7 +20,7 @@ public class interpreter{
   public interpreter(String[] args){
     custom.addAll(Arrays.asList(args));
   }
-  public String run(String file_name){
+  public String run(String file_name, String[] prevars){
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
@@ -138,7 +138,8 @@ public class interpreter{
               tempint = Integer.parseInt(command.get(2));
               templist[0] = command.get(3);
               tempinter = new interpreter(templist);
-              vars.set(tempint,tempinter.run(tempstring));
+              templist = command.get(4).split("split_here");
+              vars.set(tempint,tempinter.run(tempstring,templist));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
