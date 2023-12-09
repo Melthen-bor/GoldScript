@@ -1,5 +1,5 @@
 # Gold
-Aims to be a simple high level language that allow access to low level functions while also staying simple. Intended to be embedded in another program but could be used to build standalone programs
+Aims to be an intuitive high level language that allow access to low level functions while also staying simple. Intended to be embedded in another program but could be used to build standalone programs. 
 ## QA
 1. Q:Why is there no OOP?
 
