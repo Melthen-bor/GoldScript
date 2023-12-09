@@ -248,10 +248,21 @@ public class interpreter{
               tempint = Integer.parseInt(command.get(1));
               tempintii = vars.get(Integer.valueOf(command.get(2)));
               tempintiii = vars.get(Integer.valueOf(command.get(3)));
-              tempintiv = tempintii + tempintiii;
+              tempintiv = tempintii+tempintiii;
               vars.set(tempint,Integer.toString(tempintiv));
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,";Error[11]:Failed to parse command <add>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <add>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
+          } else if (tempstring.equals("multiply")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+              tempintii = vars.get(Integer.valueOf(command.get(2)));
+              tempintiii = vars.get(Integer.valueOf(command.get(3)));
+              tempintiv = tempintii*tempintiii;
+              vars.set(tempint,Integer.toString(tempintiv));
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[12]:Failed to parse command <multiply>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else{
