@@ -29,3 +29,4 @@ Aims to be a simple high level language that allow access to low level functions
 7. Release a release version in branch{main}
 ## Notes 
 1. The Java implementation is probably going to be the most stable as that is where things are first implemented
+2. Types are converted automatically if possible and if not an error is thrown
