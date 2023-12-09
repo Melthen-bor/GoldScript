@@ -21,7 +21,7 @@ public class interpreter{
   public interpreter(String[] args){
     custom.addAll(Arrays.asList(args));
   }
-  public String run(String file_name){
+  public String run(String file_name,String[] prevars){
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
@@ -139,7 +139,8 @@ public class interpreter{
               tempint = Integer.parseInt(command.get(2));
               templist[0] = command.get(3);
               tempinter = new interpreter(templist);
-              vars.set(tempint,tempinter.run(tempstring));
+              templist = command.get(4).split("split_here");
+              vars.set(tempint,tempinter.run(tempstring,templist));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
@@ -166,9 +167,20 @@ public class interpreter{
           //included::assign
           } else if(tempstring.equals("assign")){
             try{
-              tempint = Integer.parseInt(command.get(1));
-              tempstring = command.get(2);
-              vars.set(tempint,tempstring);
+              tempstring = command.get(1);
+              if(tempstring.equals("string")){
+                tempint = Integer.parseInt(command.get(2));
+                tempstring = command.get(3);
+                vars.set(tempint,tempstring);
+              } else if(tempstring.equals("prevar")){
+                tempint = Integer.parseInt(command.get(2));
+                tempstring = prevars[tempint];
+                tempint = Integer.parseInt(command.get(3));
+                vars.set(tempint,tempstring);
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>","Command_error");
+                Ehandler.adderror(lastgolderror);
+              }
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>"),"Command_error");
               Ehandler.adderror(lastgolderror);
