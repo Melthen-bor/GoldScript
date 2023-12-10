@@ -292,6 +292,13 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[13]:Failed to parse command <raise>"),"Command_error");
               Ehandler.adderror(lastgolderror):
             }
+          } else if(tempstring.equals("divide")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[14]:Failed to parse command <divide>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
