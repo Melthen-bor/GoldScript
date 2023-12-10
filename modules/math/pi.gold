@@ -1,2 +1,2 @@
-assign 0 3.141592
+assign string 0 3.141592
 return variable 0
