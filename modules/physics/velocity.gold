@@ -5,7 +5,5 @@ assign string 3 split_here
 concate 4 0 3
 concate 5 4 1
 import displacement 6 displacement 5
-concate 4 6 3
-concate 5 4 2
-import velocity_short 6 velocity_short 5
-return variable 6
+divide 7 6 2
+return variable 7
