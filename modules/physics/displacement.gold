@@ -1,2 +1,4 @@
 assign prevar 0 0
 assign prevar 1 1
+subtract 2 0 1
+return variable 2
