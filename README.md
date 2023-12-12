@@ -18,7 +18,7 @@ Aims to be an intuitive high level language that allow access to low level funct
    A:Gold is shiny along with light and this programming language having the intention of being a metaphorical light in the dark for programmers
 7. Q:Why is it an imperitive language?
 
-   A:Portability reasons. remember this is meant to be imbedded
+   A:Portability reasons. remember this is meant to be imbedded. Also it increases readability
 ## Development process
 1. Brainstorm
 2. Implement in branch{development}
