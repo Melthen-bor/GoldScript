@@ -16,7 +16,7 @@ Aims to be an intuitive high level language that allow access to low level funct
 5. Q:Why is it named Gold?
 
    A:Gold is shiny along with light and this programming language having the intention of being a metaphorical light in the dark for programmers
-6. Q:Why is it an imperitive language?
+7. Q:Why is it an imperitive language?
 
    A:Portability reasons. remember this is meant to be imbedded
 ## Development process
