@@ -139,7 +139,7 @@ public class interpreter{
               tempint = Integer.parseInt(command.get(2));
               templist[0] = command.get(3);
               tempinter = new interpreter(templist);
-              templist = command.get(4).split("split_here");
+              templist = vars.get(Integer.parseInt(command.get(4))).split("split_here");
               vars.set(tempint,tempinter.run(tempstring,templist));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
