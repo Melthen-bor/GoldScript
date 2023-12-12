@@ -68,8 +68,8 @@ public class interpreter{
               tempstring = command.get(2);
               tempintii = Float.valueFloat(command.get(3));
               tempintiii = Float.valueFloat(command.get(4));
-              tempintii = Float.valueFloat(vars.get(tempintii));
-              tempintiii = Float.valueFloat(vars.get(tempintiii));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(Float.toString(tempintii))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(Float.toString(tempintiii))));
               //these are the possible operations
               if(tempstring.equals("==")){
                 if(tempintii==tempintiii){
@@ -260,8 +260,8 @@ public class interpreter{
           } else if(tempstring.equals("add")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Float.valueFloat(command.get(2)));
-              tempintiii = vars.get(Float.valueFloat(command.get(3)));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
               tempintiv = tempintii+tempintiii;
               vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
@@ -272,8 +272,8 @@ public class interpreter{
           } else if(tempstring.equals("multiply")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Float.valueFloat(command.get(2)));
-              tempintiii = vars.get(Float.valueFloat(command.get(3)));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
               tempintiv = tempintii*tempintiii;
               vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
@@ -284,8 +284,8 @@ public class interpreter{
           } else if(tempstring.equals("raise")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Float.valueFloat(command.get(2)));
-              tempintiii = vars.get(Float.valueFloat(command.get(3)));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
               tempintiv = Math.pow(tempintii,tempintiii);
               vars.set(tempint,Float.toString(tempintiv));
             } catch(Exception e){
@@ -295,16 +295,27 @@ public class interpreter{
           } else if(tempstring.equals("divide")){
             try{
               tempint = Integer.parseInt(command.get(1));
-              tempintii = vars.get(Float.valueFloat(command.get(2)));
-              tempintiii = vars.get(Float.valueFloat(command.get(3)));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
               tempintiv = tempintii/tempintiii;
-              vars.set(tempint,tempintiv);
+              vars.set(tempint,Float.toSTring(tempintiv));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[14]:Failed to parse command <divide>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("comment")){
             System.out.print("");
+          } else if(tempstring.equals("subtract")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+              tempintiv = tempintii-tempintiii;
+              vars.set(tempint,Float.toString(tempintiii));
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[15]:Failed to parse command <subtract>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
