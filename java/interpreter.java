@@ -295,6 +295,10 @@ public class interpreter{
           } else if(tempstring.equals("divide")){
             try{
               tempint = Integer.parseInt(command.get(1));
+              tempintii = vars.get(Float.valueFloat(command.get(2)));
+              tempintiii = vars.get(Float.valueFloat(command.get(3)));
+              tempintiv = tempintii/tempintiii;
+              vars.set(tempint,tempintiv);
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[14]:Failed to parse command <divide>"),"Command_error");
               Ehandler.adderror(lastgolderror);
