@@ -303,6 +303,8 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[14]:Failed to parse command <divide>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          } else if(tempstring.equals("comment")){
+            System.out.print("");
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
