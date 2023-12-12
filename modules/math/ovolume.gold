@@ -1,5 +1,6 @@
 assign prevar 0 0
-import pi 1 pi pisplit_herepi
+assign string 8 pisplit_herepi
+import pi 1 pi 8
 assign string 2 4
 assign string 3 3
 raise 4 0 3
