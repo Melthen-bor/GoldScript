@@ -1,0 +1,6 @@
+assign prevar 0 0
+assign prevar 1 1
+assign string 2 2
+add 3 0 1
+divide 4 3 2
+return variable 4
