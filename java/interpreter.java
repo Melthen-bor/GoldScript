@@ -316,6 +316,15 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[15]:Failed to parse command <subtract>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
+          } else if(tempstring.equals("concate")){
+            try{
+              tempint = Integer.parseInt(command.get(1));
+              tempstring = concate(vars.get(Integer.parseInt(command.get(2))),vars.get(Integer.parseInt(command.get(3))));
+              vars.set(tempint,tempstring);
+            } catch(Exception e){
+              lastgolderror = new goldException(concate(inloc,":Error[16]:Failed to parse command <concate>"),"Command_error");
+              Ehandler.adderror(lastgolderror);
+            }
           } else{
             lastgolderror = new goldException(concate(inloc,concate(":","Error[0]:unknown command")),"Command_error");
             Ehandler.adderror(lastgolderror);
