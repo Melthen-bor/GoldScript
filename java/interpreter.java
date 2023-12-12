@@ -21,7 +21,8 @@ public class interpreter{
   public interpreter(String[] args){
     custom.addAll(Arrays.asList(args));
   }
-  public String run(String file_name,String[] prevars){
+  public String run(String file_name, String[] prevars){
+  public String run(String file_name, String[] prevars){
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
