@@ -4,4 +4,7 @@ assign prevar 2 2
 assign string 3 split_here
 concate 4 0 3
 concate 5 4 1
-import displacement 6 displacement
+import displacement 6 displacement 5
+concate 4 6 3
+concate 5 4 2
+import velocity_short 
