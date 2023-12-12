@@ -1,1 +1,1 @@
-Contribute in branch{development} but beware the contribution might be undone before release due to bugs or unexpected side effects
+Contribute in branch{development} but beware the contribution might be undone before release due to bugs or unexpected side effects. If you contribute to this project all of your rights to your contributions will be waivered to the Gold Development Team and licensed under the GLL(Gold Language License)
