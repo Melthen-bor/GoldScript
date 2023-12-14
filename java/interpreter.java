@@ -330,7 +330,38 @@ public class interpreter{
                 tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
                 tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
                 tempintiv = tempintiii%2;
-                
+                if(tempintiv=0){
+                  tempintiv = tempintii&(tempintiii-1);
+                } else{
+                  tempintiv = tempintii%tempintiii;
+                }
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals(">>")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii>>tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("<<")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii<<tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals(">>>")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii>>>tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("$")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                if(tempintii<0){
+                  vars.set(tempint,1);
+                } else{
+                  vars.set(tempint,0);
+                }
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <operation"),"Command_error");
                 Ehandler.adderror(lastgolderror);
