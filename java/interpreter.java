@@ -121,7 +121,7 @@ public class interpreter{
               tempstring = command.get(1);
               try{
                 temptype = command.get(2);
-                if(temptype.equals("Command_error")){
+                if(temptype.equals("Command_error")||temptype.equals("System_error")){
                   temptype = "Thrown_error";
                 }
               } catch(Exception e){
@@ -257,73 +257,93 @@ public class interpreter{
               lastgolderror = new goldException(concate(inloc,":Error[10]:Failed to parse command <input>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
-          //included::add
-          } else if(tempstring.equals("add")){
+          //included::operation
+          } else if(tempstring.equals("operation")){
             try{
-              tempint = Integer.parseInt(command.get(1));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
-              tempintiv = tempintii+tempintiii;
-              vars.set(tempint,Float.toString(tempintiv));
+              tempstring = commnad.get(1);
+              if(tempstring.equals("+"){
+                tempint = Integer.parseInt(command.get(2));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(4))));
+                tempintiv = tempintii+tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("*")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii*tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("**")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = Math.pow(tempintii,tempintiii);
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("/")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii/tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("-")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii-tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("&&")){
+                tempint = Integer.parseInt(command.get(1));
+                tempstring = concate(vars.get(Integer.parseInt(command.get(2))),vars.get(Integer.parseInt(command.get(3))));
+                vars.set(tempint,tempstring);
+              } else if(tempstring.equals("&")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii&tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("|")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii|tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("^")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintii^tempintiii;
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("~")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = ~tempintii;
+                vars.set(tempint,Float.toString(tempintiii));
+              } else if(tempstring.equals("//")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiii = 1/tempintiii;
+                tempintiv = Math.pow(tempintii,tempintiii);
+                vars.set(tempint,Float.toString(tempintiv));
+              } else if(tempstring.equals("%")){
+                tempint = Integer.parseInt(command.get(1));
+                tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
+                tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
+                tempintiv = tempintiii%2;
+                
+              } else{
+                lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <operation"),"Command_error");
+                Ehandler.adderror(lastgolderror);
+              }
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <add>"),"Command_error");
-              Ehandler.adderror(lastgolderror);
-            }
-          //included::multiply
-          } else if(tempstring.equals("multiply")){
-            try{
-              tempint = Integer.parseInt(command.get(1));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
-              tempintiv = tempintii*tempintiii;
-              vars.set(tempint,Float.toString(tempintiv));
-            } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[12]:Failed to parse command <multiply>"),"Command_error");
-              Ehandler.adderror(lastgolderror);
-            }
-          //included::raise
-          } else if(tempstring.equals("raise")){
-            try{
-              tempint = Integer.parseInt(command.get(1));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
-              tempintiv = Math.pow(tempintii,tempintiii);
-              vars.set(tempint,Float.toString(tempintiv));
-            } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[13]:Failed to parse command <raise>"),"Command_error");
-              Ehandler.adderror(lastgolderror):
-            }
-          } else if(tempstring.equals("divide")){
-            try{
-              tempint = Integer.parseInt(command.get(1));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
-              tempintiv = tempintii/tempintiii;
-              vars.set(tempint,Float.toSTring(tempintiv));
-            } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[14]:Failed to parse command <divide>"),"Command_error");
+              lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <operation>"),"Command_error");
               Ehandler.adderror(lastgolderror);
             }
           } else if(tempstring.equals("comment")){
-            System.out.print("");
-          } else if(tempstring.equals("subtract")){
             try{
-              tempint = Integer.parseInt(command.get(1));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
-              tempintiv = tempintii-tempintiii;
-              vars.set(tempint,Float.toString(tempintiii));
+              System.out.print("");
             } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[15]:Failed to parse command <subtract>"),"Command_error");
-              Ehandler.adderror(lastgolderror);
-            }
-          } else if(tempstring.equals("concate")){
-            try{
-              tempint = Integer.parseInt(command.get(1));
-              tempstring = concate(vars.get(Integer.parseInt(command.get(2))),vars.get(Integer.parseInt(command.get(3))));
-              vars.set(tempint,tempstring);
-            } catch(Exception e){
-              lastgolderror = new goldException(concate(inloc,":Error[16]:Failed to parse command <concate>"),"Command_error");
+              lastgolderror = new goldException("Gold_interpreter:Error[1]:Failed on a comment please report this","System_error");
               Ehandler.adderror(lastgolderror);
             }
           } else{
@@ -337,7 +357,7 @@ public class interpreter{
         }
       }
     } catch(Exception e){
-      System.out.println("Gold_interpreter:\033[31mError[0]:Critical failure\033[0m\nor program ended");
+      Ehandler.adderror(new goldException("Gold_interpreter:Error[0]:Critical Failure please report","System_error"));
     }
   Ehandler.rethrow();
   return ret;
