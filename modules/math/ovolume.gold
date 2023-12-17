@@ -3,8 +3,8 @@ assign string 8 pisplit_herepi
 import pi 1 pi 8
 assign string 2 4
 assign string 3 3
-raise 4 0 3
-divide 5 4 3
-multiply 6 5 2
-multiply 7 6 1
+operation ** 4 0 3
+operation / 5 4 3
+operation * 6 5 2
+operation * 7 6 1
 return variable 7
