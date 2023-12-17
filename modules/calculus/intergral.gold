@@ -16,3 +16,6 @@ operation && 8 8 2
 operation && 8 8 5
 operation E 8 8
 operation + 9 7 8
+operation / 10 9 3
+operation * 11 10 6
+return variable 11
