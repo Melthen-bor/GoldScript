@@ -13,6 +13,7 @@ import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
+import javax.vecmath.Vector3d;
 public class interpreter{
   ArrayList<String> custom = new ArrayList<>();
   public String concate(Object o0,Object o1){
@@ -57,6 +58,9 @@ public class interpreter{
       ScriptEngine js = mgr.getEngineByName("JavaScript");
       ArrayList<String> vars = new ArrayList<String>();
       vars.addAll(Arrays.asList(templist));
+      Vector3d tempvec;
+      Vector3d tempvecii;
+      Vector3d tempveciii;
       while(a==1){
         try{
           //This is where the included functions are defined and parsed
@@ -281,7 +285,7 @@ public class interpreter{
                 tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
                 tempintiv = Math.pow(tempintii,tempintiii);
                 vars.set(tempint,Float.toString(tempintiv));
-              } else if(tempstring.equals("/")){
+              } else if(tempstring.equals(":")){
                 tempint = Integer.parseInt(command.get(1));
                 tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
                 tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
@@ -320,7 +324,7 @@ public class interpreter{
                 tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
                 tempintiii = ~tempintii;
                 vars.set(tempint,Float.toString(tempintiii));
-              } else if(tempstring.equals("//")){
+              } else if(tempstring.equals("::")){
                 tempint = Integer.parseInt(command.get(1));
                 tempintii = Float.valueFloat(vars.get(Integer.parseInt(command.get(2))));
                 tempintiii = Float.valueFloat(vars.get(Integer.parseInt(command.get(3))));
@@ -368,6 +372,13 @@ public class interpreter{
                 tempint = Integer.parseInt(command.get(1));
                 tempstring = js.eval(vars.get(Integer.parseInt(command.get(2))));
                 vars.set(tempint,tempstring);
+              } else if(tempstring.equals("X")){
+                templist = vars.get(Integer.parseInt(command.get(1))).split("split_here");
+                tempvec = new Vector3d(templist);
+                templist = vars.get(Integer.parseInt(command.get(1))).split("split_here");
+                tempvecii = new Vector3d(templist);
+                tempvec.cross(tempvec,tempvecii);
+                vars.set(tempint,tempvec.toString);
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <operation"),"Command_error");
                 Ehandler.adderror(lastgolderror);
