@@ -1,0 +1,9 @@
+assign prevar 0 0
+assign prevar 1 1
+assign string 2 split_here
+assign string 3 ;
+operation && 4 1 2
+operation && 4 4 3
+import gamma 5 gamma 4
+operation / 6 0 5
+return variable 6
