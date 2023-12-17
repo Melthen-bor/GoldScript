@@ -364,7 +364,7 @@ public class interpreter{
                 } else{
                   vars.set(tempint,0);
                 }
-              } else if(tempstring.equals("F")){
+              } else if(tempstring.equals("E")){
                 tempint = Integer.parseInt(command.get(1));
                 tempstring = js.eval(vars.get(Integer.parseInt(command.get(2))));
                 vars.set(tempint,tempstring);
