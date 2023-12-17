@@ -1,0 +1,18 @@
+assign prevar 0 0
+assign prevar 1 1
+assign prevar 2 2
+assign string 3 2
+assign string 4 vars=
+assign string 5 ;
+operation - 6 1 0
+operation && 7 4 0
+operation && 7 7 5
+operation && 7 7 2
+operation && 7 7 5
+operation E 7 7
+operation && 8 4 1
+operation && 8 8 5
+operation && 8 8 2
+operation && 8 8 5
+operation E 8 8
+operation + 9 7 8
