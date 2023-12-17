@@ -53,6 +53,8 @@ public class interpreter{
       String[] templist = {"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""};
       goldException lastgolderror;
       interpreter tempinter;
+      ScriptEngineManager mgr = new ScriptEngineManager();
+      ScriptEngine js = mgr.getEngineByName("JavaScript");
       ArrayList<String> vars = new ArrayList<String>();
       vars.addAll(Arrays.asList(templist));
       while(a==1){
@@ -362,6 +364,10 @@ public class interpreter{
                 } else{
                   vars.set(tempint,0);
                 }
+              } else if(tempstring.equals("F")){
+                tempint = Integer.parseInt(command.get(1));
+                tempstring = js.eval(vars.get(Integer.parseInt(command.get(2))));
+                vars.set(tempint,tempstring);
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[11]:Failed to parse command <operation"),"Command_error");
                 Ehandler.adderror(lastgolderror);
