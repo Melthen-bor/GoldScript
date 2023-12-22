@@ -5,8 +5,8 @@ assign string 2 2
 assign string 3 1
 operation ** 4 0 2
 operation ** 5 1 2
-operation / 6 4 5
+operation : 6 4 5
 operation - 7 3 6
-operation // 8 7 2
-operation / 9 3 8
+operation :: 8 7 2
+operation : 9 3 8
 return variable 9
