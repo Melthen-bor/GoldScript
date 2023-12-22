@@ -3,10 +3,10 @@ assign prevar 1 1
 assign string 2 2
 assign string 3 1
 assign string 4 pisplit_herepi
-divide 5 1 2
+operation : 5 1 2
 import pi 6 pi 4
-multiply 7 5 6
-divide 4 0 1
-raise 8 7 5
-multiply 9 7 8
+operation * 7 5 6
+operation : 4 0 1
+operation ** 8 7 5
+operation * 9 7 8
 return variable 9
