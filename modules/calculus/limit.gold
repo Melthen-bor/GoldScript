@@ -1,6 +1,6 @@
 assign prevar 0 0
 assign prevar 1 1
-assign string 2 0.1
+assign prevar 2 2
 assign string 3 split_here
 operation - 4 0 2
 operation + 5 0 2
