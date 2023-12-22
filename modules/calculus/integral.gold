@@ -1,0 +1,18 @@
+assign prevar 0 0
+assign prevar 1 1
+assign prevar 2 2
+assign string 3 2
+assign string 4 vars=
+assign string 5 ;
+assign string 6 split_here
+operation - 7 1 0
+operation && 8 0 6
+operation && 8 8 2
+import function 8 function 8
+operation && 9 1 6
+operation && 9 9 2
+import function 9 function 9
+operation + 10 8 9
+operation / 11 10 3
+operation * 12 11 7
+return variable 12

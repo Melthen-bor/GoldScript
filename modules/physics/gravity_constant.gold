@@ -1,6 +1,6 @@
 assign string 0 6.67430
 assign string 1 10
 assign string 2 -11
-raise 3 1 2
-multiply 4 0 3
+operation ** 3 1 2
+operation * 4 0 3
 return varaible 4

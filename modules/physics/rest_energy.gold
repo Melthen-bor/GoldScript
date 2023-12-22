@@ -1,0 +1,7 @@
+assign prevar 0 0
+assign string 1 csplit_herec
+import c 1 c 1
+assign string 2 2
+operation ** 3 1 2
+operation * 4 0 3
+return variable 4

@@ -126,9 +126,9 @@ class interpreter:
           try:
             tempstring=command[1]
             tempint=int(command[2])
-             templist[0]=command[3]
+            templist[0]=command[3]
             tempinter=inerpreter(templist)
-            vars[tempint]=tempinter.run(tempstring)
+            vars[tempint]=tempinter.run(tempstring,vars[int(command[4])])
            except:
              lastgolderror=goldException(self.concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error")
              Ehandler.adderror(lastgolderror)
