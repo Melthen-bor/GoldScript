@@ -23,7 +23,6 @@ public class interpreter{
     custom.addAll(Arrays.asList(args));
   }
   public String run(String file_name, String[] prevars){
-  public String run(String file_name, String[] prevars){
     String ret = "";
     errorHandler Ehandler = new errorHandler();
     try{
@@ -180,9 +179,9 @@ public class interpreter{
                 tempstring = command.get(3);
                 vars.set(tempint,tempstring);
               } else if(tempstring.equals("prevar")){
-                tempint = Integer.parseInt(command.get(2));
-                tempstring = prevars[tempint];
                 tempint = Integer.parseInt(command.get(3));
+                tempstring = prevars[tempint];
+                tempint = Integer.parseInt(command.get(2));
                 vars.set(tempint,tempstring);
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[5]:Failed to parse command <assign>","Command_error");
