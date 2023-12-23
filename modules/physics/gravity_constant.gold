@@ -3,4 +3,4 @@ assign string 1 10
 assign string 2 -11
 operation ** 3 1 2
 operation * 4 0 3
-return varaible 4
+return variable 4

@@ -13,6 +13,6 @@ operation && 9 1 6
 operation && 9 9 2
 import function 9 function 9
 operation + 10 8 9
-operation / 11 10 3
+operation : 11 10 3
 operation * 12 11 7
 return variable 12

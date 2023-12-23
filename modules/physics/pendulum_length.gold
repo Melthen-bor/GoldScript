@@ -8,5 +8,5 @@ operation ** 5 0 2
 operation ** 6 3 2
 operation * 7 5 1
 operation * 8 6 4
-operation / 9 7 8
+operation : 9 7 8
 return variable 9

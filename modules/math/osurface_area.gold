@@ -1,0 +1,9 @@
+assign prevar 0 0
+assign string 1 pisplit_herepi
+import pi 1 pi 1
+assign string 2 2
+assign string 3 4
+operation ** 4 0 2
+operation * 5 4 1
+operation * 6 5 3
+return variable 6
