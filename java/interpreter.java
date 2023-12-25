@@ -71,10 +71,8 @@ public class interpreter{
               tempstring = command.get(1);
               tempint = Integer.parseInt(tempstring);
               tempstring = command.get(2);
-              tempintii = Float.valueFloat(command.get(3));
-              tempintiii = Float.valueFloat(command.get(4));
-              tempintii = Float.valueFloat(vars.get(Integer.parseInt(Float.toString(tempintii))));
-              tempintiii = Float.valueFloat(vars.get(Integer.parseInt(Float.toString(tempintiii))));
+              tempintii = vars.get(Integer.parseInt(command.get(3))).getValue();
+              tempintiii = vars.get(Integer.parseInt(command.get(4))).getValue();
               //these are the possible operations
               if(tempstring.equals("==")){
                 if(tempintii==tempintiii){
@@ -142,7 +140,7 @@ public class interpreter{
               templist[0] = command.get(3);
               tempinter = new interpreter(templist);
               templist = vars.get(Integer.parseInt(command.get(4))).split("split_here");
-              vars.set(tempint,tempinter.run(tempstring,templist));
+              vars.set(tempint,new goldString(tempinter.run(tempstring,templist)));
             } catch(Exception e){
               lastgolderror = new goldException(concate(inloc,":Error[3]:Failed to parse command <import>"),"Command_error");
               Ehandler.adderror(lastgolderror);
@@ -150,13 +148,10 @@ public class interpreter{
           } else if(tempstring.equals("return")){
             try{
               tempstring = command.get(1);
-              if(tempstring.equals("custom")){
-                tempstring = command.get(2);
-                ret = tempstring;
+              if(tempstring.equals("string")){
+                ret = command.get(2);
               } else if(tempstring.equals("variable")){
-                tempint = Integer.parseInt(command.get(2));
-                tempstring = vars.get(tempint);
-                ret = tempstring;
+                ret = vars.get(Integer.parseInt(command.get(2))).getValue();
               } else{
                 lastgolderror = new goldException(concate(inloc,":Error[4]:Failed to parse command <return>"),"Command_error");
                 Ehandler.adderror(lastgolderror);
@@ -169,9 +164,7 @@ public class interpreter{
             try{
               tempstring = command.get(1);
               if(tempstring.equals("string")){
-                tempint = Integer.parseInt(command.get(2));
-                tempstring = command.get(3);
-                vars.set(tempint,tempstring);
+                vars.set(Integer.parseInt(command.get(2)),new goldString(command.get(3)));
               } else if(tempstring.equals("prevar")){
                 tempint = Integer.parseInt(command.get(3));
                 tempstring = prevars[tempint];
