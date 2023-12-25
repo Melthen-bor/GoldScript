@@ -33,4 +33,9 @@ public class d3vector{
     this.b=a[2]*b[0]-a[0]*b[2];
     this.c=a[0]*b[1]-a[1]*b[0];
   }
+  public void dot(int[] a,int[] b){
+    this.a=a[0]*b[0];
+    this.b=a[1]*b[1];
+    this.c=a[2]*b[2];
+  }
 }
