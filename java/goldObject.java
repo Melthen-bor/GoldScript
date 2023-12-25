@@ -14,6 +14,7 @@ import javax.script.ScriptEngine;
 import java.lang.Math;
 import javax.vecmath.Vector3d;
 public class goldObject{
+  Object value;
   public goldObject(Object val){
     this.value=val;
   }
