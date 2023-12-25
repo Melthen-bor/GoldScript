@@ -13,9 +13,9 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
 import javax.vecmath.Vector3d;
-public static class goldInt extends goldObject{
-  Integer value;
-  public goldInteger(Integer val){
+public static class goldNum extends goldObject{
+  Float value;
+  public goldNum(Float val){
     this.value=val;
   }
 }
