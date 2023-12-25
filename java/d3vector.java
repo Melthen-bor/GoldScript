@@ -14,6 +14,9 @@ import javax.script.ScriptEngine;
 import java.lang.Math;
 import javax.vecmath.Vector3d;
 public class d3vector{
+  int a;
+  int b;
+  int c;
   public String concate(object s0,object s1){
     return s0+""+s1;
   }
