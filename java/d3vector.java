@@ -29,6 +29,8 @@ public class d3vector{
     vec[2]=this.c;
   }
   public void cross(int[] a,int[] b){
-    this.a=a[
+    this.a=a[1]*b[2]-a[2]*b[1];
+    this.b=a[2]*b[0]-a[0]*b[2];
+    this.c=a[0]*b[1]-a[1]*b[0];
   }
 }
