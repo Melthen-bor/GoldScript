@@ -18,10 +18,10 @@ public class goldObject{
   public goldObject(Object val){
     this.value=val;
   }
-  public Object get_value(){
+  public Object getValue(){
     return this.value;
   }
-  public Object set_value(Object val){
+  public Object setValue(Object val){
     this.value=val;
   }
 }
