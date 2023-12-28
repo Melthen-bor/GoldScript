@@ -30,3 +30,4 @@ Aims to be an intuitive high level language that allow access to low level funct
 ## Notes 
 1. The Java implementation is probably going to be the most stable as that is where things are first implemented
 2. Types are converted automatically if possible and if not an error is thrown
+3. May be renamed to GoldScript some time in the future
