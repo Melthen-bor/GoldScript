@@ -6,3 +6,4 @@ needed nothing here is currently supported
 |----|---------|------|------|
 |interpreter|py|replaced|❎|
 |interpreter|cpp|to be replaced|❎|
+|interpreter2|py|to be replaced|✅|
