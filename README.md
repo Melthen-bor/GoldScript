@@ -1,4 +1,4 @@
-# Gold
+# GoldScript
 Aims to be an intuitive high level language that allow access to low level functions while also staying simple. Intended to be embedded in another program but could be used to build standalone programs. 
 ## QA
 1. Q:Why is there no OOP?
@@ -12,10 +12,10 @@ Aims to be an intuitive high level language that allow access to low level funct
    A:Find a work around
 4. Q:Could you help me with x?
 
-   A:Check the [wiki](https://github.com/Melthen-bor/Gold/wiki) and if that does not help ask in [discussions](https://github.com/Melthen-bor/Gold/discussions)
-5. Q:Why is it named Gold?
+   A:Check the [wiki](https://github.com/Melthen-bor/GoldScript/wiki) and if that does not help ask in [discussions](https://github.com/Melthen-bor/GoldScript/discussions)
+5. Q:Why is it named GoldScript?
 
-   A:Gold is shiny along with light and this programming language having the intention of being a metaphorical light in the dark for programmers
+   A:Gold is shiny along with light and this programming language having the intention of being a metaphorical light in the dark for programmers and it is meant for scripting therefore GoldScript
 7. Q:Why is it an imperitive language?
 
    A:Portability reasons. remember this is meant to be imbedded. Also it increases readability
@@ -30,4 +30,3 @@ Aims to be an intuitive high level language that allow access to low level funct
 ## Notes 
 1. The Java implementation is probably going to be the most stable as that is where things are first implemented
 2. Types are converted automatically if possible and if not an error is thrown
-3. May be renamed to GoldScript some time in the future
