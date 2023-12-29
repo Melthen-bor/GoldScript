@@ -236,7 +236,7 @@ public class interpreter{
       this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[10]:Failed to parse command <operation>"),"Command_error"));
     }
   }
-  public static String run(String filename,String[] prevars){
+  public static Object run(String filename,String[] prevars){
     try{
       file_reader fileHandler = new file_reader(concate(filename,".gold"));
       this.prevars = prevars;
