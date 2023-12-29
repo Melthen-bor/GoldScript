@@ -20,10 +20,10 @@ public class d3vector{
   public String concate(object s0,object s1){
     return s0+""+s1;
   }
-  public d3vector(int[] vec){
-    this.a=vec[0];
-    this.b=vec[1];
-    this.c=vec[2];
+  public d3vector(String[] vec){
+    this.a=Integer.parseInt(vec[0]);
+    this.b=Integer.parseInt(vec[1]);
+    this.c=Integer.parseInt(vec[2]);
   }
   public int[] to_list(){
     vec=[]={"","",""};

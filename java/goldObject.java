@@ -18,6 +18,9 @@ public class goldObject{
   public goldObject(Object val){
     this.value=val;
   }
+  public goldObject(){
+    this.val="";
+  }
   public Object getValue(){
     return this.value;
   }
