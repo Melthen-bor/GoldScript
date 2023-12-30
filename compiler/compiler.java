@@ -25,7 +25,7 @@ public class compiler{
   }
   public static compile(String fileName){
     try{
-      file_reader source = new file_reader(fileName);
+      file_reader source = new file_reader(concate(fileName,".gold"));
       ArrayList<String> content = new ArrayList<String>();
       content.addAll(source.read());
       int a = 1;
@@ -42,7 +42,7 @@ public class compiler{
           } else(tempstring.equals("jumpif")){
             tempstring = command.get(2);
             if(tempstring.equals("==")){
-              
+              replace = concate(replace,concate(concate(concate("if ",command.get(3),concate("==",
             }
           }
         } catch(Exception e){
