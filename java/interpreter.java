@@ -247,6 +247,10 @@ public class interpreter{
       String tempstring;
       ArrayList<String> command = new ArrayList<String>();
       String[] templist;
+      iny c = 0;
+      while(c<=250){
+        this.vars.add(new goldObject);
+      }
       while(a==1){
         try{
           command.addAll(Arrays.asList(content.get(b).split(" ")));
