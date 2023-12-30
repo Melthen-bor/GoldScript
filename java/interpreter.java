@@ -248,7 +248,7 @@ public class interpreter{
       ArrayList<String> command = new ArrayList<String>();
       String[] templist;
       iny c = 0;
-      while(c<=250){
+      while(c<250){
         this.vars.add(new goldObject);
       }
       while(a==1){
