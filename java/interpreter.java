@@ -250,6 +250,7 @@ public class interpreter{
       iny c = 0;
       while(c<250){
         this.vars.add(new goldObject);
+        c+=1
       }
       while(a==1){
         try{
