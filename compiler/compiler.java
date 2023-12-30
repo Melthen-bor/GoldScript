@@ -42,7 +42,7 @@ public class compiler{
           } else(tempstring.equals("jumpif")){
             tempstring = command.get(2);
             if(tempstring.equals("==")){
-              replace = concate(replace,concate(concate(concate("if ",command.get(3),concate("==",
+              replace = concate(replace,concate(concate(concate(concate("IF ",command.get(3)),concate("=",command.get(4))),"\n"),concate(concate("  JMP rel32 ",concate(command.get(1),"\n"),"FI"))));
             }
           }
         } catch(Exception e){
