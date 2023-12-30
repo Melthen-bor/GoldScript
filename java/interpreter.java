@@ -37,6 +37,33 @@ public class interpreter{
       }
     }
   }
+  public static String parsetime(String so){
+    String s1;
+    if(so.equals("%x")){
+      s1 = "MM-dd-yyyy";
+    } else if(so.equals("%d")){
+      s1 = "dd";
+    } else if(so.equals("%H")){
+      s1 = "HH";
+    } else if(so.equals("%M")){
+      s1 = "mm";
+    } else if(so.equals("%m")){
+      s1 = "MM";
+    } else if(so.equals("%f")){
+      s1 = "ns";
+    } else if(so.equals("%S")){
+      s1 = "ss";
+    } else if(so.equals(%Y")){
+      s1 = "yyyy";
+    } else if(so.equals("%y")){
+      s1 = "yy";
+    } else if(so.equals("%X")){
+      s1 = "HH:mm:ss";
+    } else{
+      this.Ehandler.adderror(new goldException("Gold_Interpreter:Error[1]:Failed to parse time formatting","System_error"));
+    }
+    return s1;
+  }
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
@@ -151,7 +178,7 @@ public class interpreter{
   }
   public static void timecmd(String[] args){
     try{
-      this.vars.set(Integer.parseInt(args[0]),new goldString(LocalDateTime.now(DateTimeFormatter.ofPattern(args[1]))));
+      this.vars.set(Integer.parseInt(args[0]),new goldString(LocalDateTime.now(DateTimeFormatter.ofPattern(parsetime(args[1])))));
     } catch(Exception e){
       this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[6]:Failed to parse command <time>"),"Command_error"));
     }
