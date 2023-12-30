@@ -206,7 +206,7 @@ public class interpreter{
       } else if(a.equals("%")){
         this.vars.set(Integer.parseInt(args[1]),new goldNum(this.vars.get(Integer.parseInt(args[2])).getValue()%this.vars.get(Integer.parseInt(args[3])).getValue()));
       } else if(a.equals("$")){
-        this.vars.set(Integer.parseInt(args[1]),new goldNum((this.vars.get(Integer.parseInt(args[2])).getValue()%2f==0f)?0f:1f));
+        this.vars.set(Integer.parseInt(args[1]),new goldNum(((this.vars.get(Integer.parseInt(args[2])).getValue())%2f==0f)?0f:1f));
       } else if(a.equals("&&")){
         this.vars.set(Integer.parseInt(args[1]),new goldString(concate(this.vars.get(Integer.parseInt(args[2])).getValue(),this.vars.get(Integer.parseInt(args[3])).getValue())));
       } else if(a.equals("&")){
