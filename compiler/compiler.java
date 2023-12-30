@@ -32,11 +32,19 @@ public class compiler{
       int b = 0;
       ArrayList<String> command = new ArrayList<String>();
       String tempstring;
+      String replace = "";
       while(a==1){
         try{
           command.addAll((content.get(b)).split(" "));
           tempstring = command.get(0);
-          if(tempstring.equals("
+          if(tempstring.equals("jump")){
+            replace = concate(replace,concate("JMP rel32 ",command.get(1)));
+          } else(tempstring.equals("jumpif")){
+            tempstring = command.get(2);
+            if(tempstring.equals("==")){
+              
+            }
+          }
         } catch(Exception e){
           a = 0;
         }
