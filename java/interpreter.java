@@ -72,7 +72,7 @@ public class interpreter{
   }
   public static void gocmd(String args){
     try{
-      this.line = Integer.parseInt(args[0]);
+      this.line += Integer.parseInt(args[0]);
     } catch(Exception e){
       this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[1]:Failed to parse command <go>"),"Command_error"));
     }
@@ -85,27 +85,27 @@ public class interpreter{
       Float d = this.vars.get(Integer.parseInt(args[3])).getValue();
       if (b.equals("==")){
         if(c==d){
-          this.line=a;
+          this.line += a;
         }
       } else if(b.equals(">")){
         if(c>d){
-          this.line=a;
+          this.line += a;
         }
       } else if(b.equals("<")){
         if(c<d){
-          this.line=a;
+          this.line += a;
         }
       } else if(b.equals(">=")){
         if(c>=d){
-          this.line=a;
+          this.line += a;
         }
       } else if(b.equals("<=")){
         if(c<=d){
-          this.line=a;
+          this.line += a;
         }
       } else if(b.equals("!")){
         if(c!=d){
-          this.line=a;
+          this.line += a;
         }
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[2]:Failed to parse command <goif>"),"Command_error"));
