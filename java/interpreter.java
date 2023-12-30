@@ -284,9 +284,9 @@ public class interpreter{
           command.addAll(Arrays.asList(content.get(b).split(" ")));
           tempstring = command.get(0);
           command.remove(0);
-          if(tempstring.equals("go")){
+          if(tempstring.equals("jump")){
             this.gocmd(command.toArray());
-          } else if(tempstring.equals("goif")){
+          } else if(tempstring.equals("jumpif")){
             this.goifcmd(command.toArray());
           } else if(tempstring.equals("throw")){
             this.throwcmd(command.toArray());
