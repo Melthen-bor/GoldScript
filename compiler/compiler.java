@@ -66,7 +66,22 @@ public class compiler{
             include = new file_reader(command.get(1));
             replace = concate(replace,parseList(include.read(),"\n"));
           } else if(tempstring.equals("assign")){
-            
+            tempstring = command.get(3);
+            if(tempstring.equals("Normal")){
+              replace = concate(replace,concate(command.get(1),concate(" DQ ",command.get(2))));
+            } else if(tempstring.equals("Short")){
+              replace = concate(replace,concate(command.get(1),concate(" DD ",command.get(2))));
+            } else if(tempstring.equals("Long")){
+              replace = concate(replace,concate(command.get(1),concate(" DT ",command.get(2))));
+            } else if(tempstring.equals("tiny")){
+              replace = concate(replace,concate(command.get(1),concate(" DW ",command.get(2))));
+            } else if(tempstring.equals("Byte")){
+              replace = concate(replace,concate(command.get(1),concate(" DB ",command.get(2))));
+            }
+          } else if(tempstring.equals("time")){
+            replace = concate(replace,concate("RDTSC\n",concate("mov [",concate(command.get(1),concate("], EAX\n",concate("move [",concate(command.get(2),"], EDX")))))));
+          } else if(tempstring.equals("out")){
+            replace = concate(replace,concate("move EDX, ",concate(command.get(1),concate("\n",concate("move ECX, ",concate(command.get(1),"move ebx,1\nmove eax,4\nint 0x80"))))));
           }
           replace = concate(replace,"\n");
         } catch(Exception e){
