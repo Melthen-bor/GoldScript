@@ -72,7 +72,7 @@ public class interpreter{
   }
   public static void gocmd(String args){
     try{
-      this.line += Integer.parseInt(args[0]);
+      this.line = Integer.parseInt(args[0]);
     } catch(Exception e){
       this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[1]:Failed to parse command <go>"),"Command_error"));
     }
@@ -85,27 +85,27 @@ public class interpreter{
       Float d = this.vars.get(Integer.parseInt(args[3])).getValue();
       if (b.equals("==")){
         if(c==d){
-          this.line += a;
+          this.line = a;
         }
       } else if(b.equals(">")){
         if(c>d){
-          this.line += a;
+          this.line = a;
         }
       } else if(b.equals("<")){
         if(c<d){
-          this.line += a;
+          this.line = a;
         }
       } else if(b.equals(">=")){
         if(c>=d){
-          this.line += a;
+          this.line = a;
         }
       } else if(b.equals("<=")){
         if(c<=d){
-          this.line += a;
+          this.line = a;
         }
       } else if(b.equals("!")){
         if(c!=d){
-          this.line += a;
+          this.line = a;
         }
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[2]:Failed to parse command <goif>"),"Command_error"));
@@ -256,6 +256,8 @@ public class interpreter{
         this.vars.set(Integer.parseInt(args[1]),new goldNum(Float.valueFloat(this.vars.get(Integer.parseInt(args[2])))));
       } else if(a.equals("X")){
         this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).cross((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#")).to_list()),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#")).to_list())).to_list())));
+      } else if(a.equals("D")){
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[10]:Failed to parse command <operation>"),"Command_error"));
       }
@@ -284,9 +286,9 @@ public class interpreter{
           command.addAll(Arrays.asList(content.get(b).split(" ")));
           tempstring = command.get(0);
           command.remove(0);
-          if(tempstring.equals("jump")){
+          if(tempstring.equals("jgo")){
             this.gocmd(command.toArray());
-          } else if(tempstring.equals("jumpif")){
+          } else if(tempstring.equals("goif")){
             this.goifcmd(command.toArray());
           } else if(tempstring.equals("throw")){
             this.throwcmd(command.toArray());
