@@ -257,8 +257,8 @@ public class interpreter{
         this.vars.set(Integer.parseInt(args[1]),new goldNum(Float.valueFloat(this.vars.get(Integer.parseInt(args[2])))));
       } else if(a.equals("X")){
         this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).cross((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#")).to_list()),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#")).to_list())).to_list())));
-      } else if(a.equals("D")){
-        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).
+      /*} else if(a.equals("D")){
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).*/
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[10]:Failed to parse command <operation>"),"Command_error"));
       }
