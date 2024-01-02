@@ -69,6 +69,7 @@ public class interpreter{
   }
   public static interpreter(String[] args){
     this.inloc = args[0];
+    this.line = 0;
   }
   public static void gocmd(String args){
     try{
@@ -286,7 +287,7 @@ public class interpreter{
           command.addAll(Arrays.asList(content.get(b).split(" ")));
           tempstring = command.get(0);
           command.remove(0);
-          if(tempstring.equals("jgo")){
+          if(tempstring.equals("go")){
             this.gocmd(command.toArray());
           } else if(tempstring.equals("goif")){
             this.goifcmd(command.toArray());
