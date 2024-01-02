@@ -37,11 +37,39 @@ public class interpreter{
       }
     }
   }
+  public static String parsetime(String so){
+    String s1;
+    if(so.equals("%x")){
+      s1 = "MM-dd-yyyy";
+    } else if(so.equals("%d")){
+      s1 = "dd";
+    } else if(so.equals("%H")){
+      s1 = "HH";
+    } else if(so.equals("%M")){
+      s1 = "mm";
+    } else if(so.equals("%m")){
+      s1 = "MM";
+    } else if(so.equals("%f")){
+      s1 = "ns";
+    } else if(so.equals("%S")){
+      s1 = "ss";
+    } else if(so.equals(%Y")){
+      s1 = "yyyy";
+    } else if(so.equals("%y")){
+      s1 = "yy";
+    } else if(so.equals("%X")){
+      s1 = "HH:mm:ss";
+    } else{
+      this.Ehandler.adderror(new goldException("Gold_Interpreter:Error[1]:Failed to parse time formatting","System_error"));
+    }
+    return s1;
+  }
   public static String concate(Object o0,Object o1){
     return o0+""+o1;
   }
   public static interpreter(String[] args){
     this.inloc = args[0];
+    this.line = 0;
   }
   public static void gocmd(String args){
     try{
@@ -58,27 +86,27 @@ public class interpreter{
       Float d = this.vars.get(Integer.parseInt(args[3])).getValue();
       if (b.equals("==")){
         if(c==d){
-          this.line=a;
+          this.line = a;
         }
       } else if(b.equals(">")){
         if(c>d){
-          this.line=a;
+          this.line = a;
         }
       } else if(b.equals("<")){
         if(c<d){
-          this.line=a;
+          this.line = a;
         }
       } else if(b.equals(">=")){
         if(c>=d){
-          this.line=a;
+          this.line = a;
         }
       } else if(b.equals("<=")){
         if(c<=d){
-          this.line=a;
+          this.line = a;
         }
       } else if(b.equals("!")){
         if(c!=d){
-          this.line=a;
+          this.line = a;
         }
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[2]:Failed to parse command <goif>"),"Command_error"));
@@ -151,7 +179,7 @@ public class interpreter{
   }
   public static void timecmd(String[] args){
     try{
-      this.vars.set(Integer.parseInt(args[0]),new goldString(LocalDateTime.now(DateTimeFormatter.ofPattern(args[1]))));
+      this.vars.set(Integer.parseInt(args[0]),new goldString(LocalDateTime.now(DateTimeFormatter.ofPattern(parsetime(args[1])))));
     } catch(Exception e){
       this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[6]:Failed to parse command <time>"),"Command_error"));
     }
@@ -206,7 +234,7 @@ public class interpreter{
       } else if(a.equals("%")){
         this.vars.set(Integer.parseInt(args[1]),new goldNum(this.vars.get(Integer.parseInt(args[2])).getValue()%this.vars.get(Integer.parseInt(args[3])).getValue()));
       } else if(a.equals("$")){
-        this.vars.set(Integer.parseInt(args[1]),new goldNum((this.vars.get(Integer.parseInt(args[2])).getValue()%2f==0f)?0f:1f));
+        this.vars.set(Integer.parseInt(args[1]),new goldNum(((this.vars.get(Integer.parseInt(args[2])).getValue())%2f==0f)?0f:1f));
       } else if(a.equals("&&")){
         this.vars.set(Integer.parseInt(args[1]),new goldString(concate(this.vars.get(Integer.parseInt(args[2])).getValue(),this.vars.get(Integer.parseInt(args[3])).getValue())));
       } else if(a.equals("&")){
@@ -229,6 +257,8 @@ public class interpreter{
         this.vars.set(Integer.parseInt(args[1]),new goldNum(Float.valueFloat(this.vars.get(Integer.parseInt(args[2])))));
       } else if(a.equals("X")){
         this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).cross((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#")).to_list()),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#")).to_list())).to_list())));
+      /*} else if(a.equals("D")){
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).*/
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[10]:Failed to parse command <operation>"),"Command_error"));
       }
@@ -247,6 +277,11 @@ public class interpreter{
       String tempstring;
       ArrayList<String> command = new ArrayList<String>();
       String[] templist;
+      iny c = 0;
+      while(c<250){
+        this.vars.add(new goldObject);
+        c+=1
+      }
       while(a==1){
         try{
           command.addAll(Arrays.asList(content.get(b).split(" ")));
