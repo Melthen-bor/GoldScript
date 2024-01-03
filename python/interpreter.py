@@ -119,17 +119,7 @@ class interpreter():
             self.Ehandler.adderror(goldException(concate(self.inloc,":Error[4]:Failed to parse command <return>"),"Command_error"))
     def assigncmd(self,args):
         try:
-            if args[0]=="String":
-                self.vars[int(args[1])]=args[2]
-            elif args[0]=="Prevar":
-                if args[1]=="String":
-                    self.vars[int(args[2])]=self.prevars[int(args[3])]
-                elif args[1]=="Number":
-                    self.vars[int(args[2])]=float(self.prevars[int(args[3])])
-            elif args[0]=="Number":
-                self.vars[int(args[1])]=float(args[2])
-            else:
-                self.Ehandler.adderror(goldException(concate(self.inloc,":Error[5]:Failed to parse command <assign>"),"Command_error"))
+            self.vars[int(args[1])]=args[2] if args[0]=="String" else (int(args[2]) if args[0]=="Number" else ((self.prevars[int(args[3])] if args[2]=="String" else (int(self.prevars[int(args[3])]) if args[2]=="Number" else "")) if args[0]=="Prevar" else ("We Three Kings of Orient are,\nBearing gifts we traverse afar,\nField and fountain,\nMoor and mountain,\nFollowing yonder Star." if args[0]=="Lorem_ipsum" else "")))
         except:
             self.Ehandler.adderror(goldException(concate(self.inloc,":Error[5]:Failed to parse command <assign>"),"Command_error"))
     def timecmd(self,args):
