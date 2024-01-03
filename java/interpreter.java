@@ -14,7 +14,6 @@ import javax.script.ScriptEngine;
 import java.lang.Math;
 import javax.vecmath.Vector3d;
 public class interpreter{
-  //static ArrayList<String> custom = ArrayList<String>();
   static int line;
   static ArrayList<goldObject> vars = ArrayList<goldObject>();
   static errorHandler Ehandler = errorHandler();
@@ -256,9 +255,11 @@ public class interpreter{
       } else if(a.equals("N")){
         this.vars.set(Integer.parseInt(args[1]),new goldNum(Float.valueFloat(this.vars.get(Integer.parseInt(args[2])))));
       } else if(a.equals("X")){
-        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).cross((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#")).to_list()),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#")).to_list())).to_list())));
-      /*} else if(a.equals("D")){
-        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).*/
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).cross((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#"))).to_list(),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#"))).to_list())).to_list()));
+      } else if(a.equals("D")){
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).dot((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#"))).to_list(),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#"))).to_list())).to_list()));
+      } else if(a.equals("H")){
+        this.vars.set(Integer.parseInt(args[1]),new goldString(parseList((new d3vector()).hadamard((new d3vector(this.vars.get(Integer.parseInt(args[2])).getValue().split("#"))).to_list(),(new d3vector(this.vars.get(Integer.parseInt(args[3])).getValue().split("#"))).to_list())).to_list()));
       } else{
         this.Ehandler.adderror(new goldException(concate(this.inloc,":Error[10]:Failed to parse command <operation>"),"Command_error"));
       }
