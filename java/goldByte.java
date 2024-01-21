@@ -49,9 +49,9 @@ public class goldByte{
     while(b<8){
       d=i0-c;
       if(d<0){
-        a=tos(a,tos("0","2"));
+        a=tos(a,"0");
       } else{
-        a=tos(a,tos("1","2"));
+        a=tos(a,"1");
         i0-c;
       }
       c/=2;
@@ -61,6 +61,11 @@ public class goldByte{
   }
   public static int getvalue(){
     String a="";
-    
+    int b=0;
+    while(b<8){
+      if(this.value.get(b)){
+        a=tos(a,tos(
+      }
+    }
   }
 }
