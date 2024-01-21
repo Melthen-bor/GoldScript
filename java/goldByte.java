@@ -25,12 +25,14 @@ public class goldByte{
   public static int btd7(String s0){
     int a=0;
     String[] b=s0.split("2");
-    c=0;
-    d=64;
+    int c=0;
+    int d=64;
     while(c<7){
       if((b[c]).equals("1")){
-        
+        a+d;
       }
+      c++;
     }
+    return a;
   }
 }
