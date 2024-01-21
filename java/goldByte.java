@@ -26,8 +26,8 @@ public class goldByte{
     int a=0;
     String[] b=s0.split("2");
     int c=0;
-    int d=128;
-    while(c<8){
+    int d=64;
+    while(c<7){
       if((b[c]).equals("1")){
         a+d;
       }
@@ -43,10 +43,10 @@ public class goldByte{
   }
   public static String dtb8(int i0){
     String a="";
-    int b=0;
-    int c=128;
+    int b=1;
+    int c=64;
     int d;
-    while(b<8){
+    while(b<7){
       d=i0-c;
       if(d<0){
         a=tos(a,"02");
@@ -56,6 +56,11 @@ public class goldByte{
       }
       c/=2;
       b++;
+    }
+    if(this.value.get(0)){
+      b=0-1;
+      c=b-a;
+      a=c;
     }
     return a;
   }
