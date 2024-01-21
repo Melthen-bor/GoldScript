@@ -49,9 +49,9 @@ public class goldByte{
     while(b<8){
       d=i0-c;
       if(d<0){
-        a=tos(a,"0");
+        a=tos(a,"02");
       } else{
-        a=tos(a,"1");
+        a=tos(a,"12");
         i0-c;
       }
       c/=2;
@@ -64,8 +64,12 @@ public class goldByte{
     int b=0;
     while(b<8){
       if(this.value.get(b)){
-        a=tos(a,tos(
+        a=tos(a,"12");
+      } else{
+        a=tos(a,"02");
       }
+      b++;
     }
+    return btd8(a);
   }
 }
