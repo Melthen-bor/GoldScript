@@ -35,4 +35,10 @@ public class goldByte{
     }
     return a;
   }
+  public static void not(){
+    int a=0;
+    while(a<8){
+      (this.value.get(b)).not();
+    }
+  }
 }
