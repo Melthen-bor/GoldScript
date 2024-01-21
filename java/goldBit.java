@@ -12,9 +12,9 @@ import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
-public class goldObject{
+public class goldBit{
   boolean value;
-  public goldObject(){
+  public goldBit(){
     this.value=0;
   }
   public static boolean getvalue(){
