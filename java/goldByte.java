@@ -46,6 +46,9 @@ public class goldByte{
     int b=1;
     int c=64;
     int d;
+    if(i0<0){
+      a=tos(a,"12");
+    }
     while(b<7){
       d=i0-c;
       if(d<0){
@@ -76,5 +79,8 @@ public class goldByte{
       b++;
     }
     return btd8(a);
+  }
+  public static goldByte __add__(goldByte byte0){
+    
   }
 }
