@@ -15,9 +15,16 @@ import java.lang.Math;
 public class goldBit{
   boolean value;
   public goldBit(){
-    this.value=0;
+    this.value=false;
   }
   public static boolean getvalue(){
     return this.value;
+  }
+  public static void flip(){
+    if(this.value){
+      this.value=false;
+    } else{
+      thois.value=true;
+    }
   }
 }
