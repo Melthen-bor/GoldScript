@@ -24,7 +24,7 @@ public class goldBit{
     if(this.value){
       this.value=false;
     } else{
-      thois.value=true;
+      this.value=true;
     }
   }
 }
