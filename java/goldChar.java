@@ -13,6 +13,24 @@ import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
 import javax.vecmath.Vector3d;
-public class goldChar{
-  ArrayList<gold
+public class goldByte{
+  ArrayList<goldBit> value=new ArrayList<goldBit>();
+  public goldByte(){
+    int a=0;
+    while(a<0){
+      this.value.add(new goldBit);
+      a++;
+    }
+  }
+  public static int btd7(String s0){
+    int a=0;
+    String[] b=s0.split("2");
+    c=0;
+    d=64;
+    while(c<7){
+      if((b[c]).equals("1")){
+        
+      }
+    }
+  }
 }
