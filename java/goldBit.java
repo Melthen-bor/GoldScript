@@ -20,7 +20,7 @@ public class goldBit{
   public static boolean getvalue(){
     return this.value;
   }
-  public static void flip(){
+  public static void not(){
     if(this.value){
       this.value=false;
     } else{
