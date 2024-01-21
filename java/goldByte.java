@@ -15,11 +15,15 @@ import java.lang.Math;
 import javax.vecmath.Vector3d;
 public class goldByte{
   ArrayList<goldBit> value=new ArrayList<goldBit>();
-  public goldByte(){
+  goldBit sign=new goldBit();
+  public goldByte(int sign){
     int a=0;
     while(a<0){
       this.value.add(new goldBit);
       a++;
+    }
+    if(sign=1){
+      this.sign.not();
     }
   }
   public static int btd7(String s0){
@@ -58,5 +62,8 @@ public class goldByte{
       b++;
     }
     return a;
+  }
+  public static int getvalue(){
+    
   }
 }
