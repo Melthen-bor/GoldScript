@@ -41,4 +41,22 @@ public class goldByte{
       (this.value.get(b)).not();
     }
   }
+  public static String dtb7(int i0){
+    String a="";
+    int b=0;
+    int c=64;
+    int d;
+    while(b<7){
+      d=i0-c;
+      if(d<0){
+        a=tos(a,"0");
+      } else{
+        a=tos(a,"1");
+        i0-c;
+      }
+      c/=2;
+      b++;
+    }
+    return a;
+  }
 }
