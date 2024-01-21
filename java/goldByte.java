@@ -15,23 +15,19 @@ import java.lang.Math;
 import javax.vecmath.Vector3d;
 public class goldByte{
   ArrayList<goldBit> value=new ArrayList<goldBit>();
-  goldBit sign=new goldBit();
-  public goldByte(int sign){
+  public goldByte(){
     int a=0;
     while(a<0){
       this.value.add(new goldBit);
       a++;
     }
-    if(sign=1){
-      this.sign.not();
-    }
   }
-  public static int btd7(String s0){
+  public static int btd8(String s0){
     int a=0;
     String[] b=s0.split("2");
     int c=0;
-    int d=64;
-    while(c<7){
+    int d=128;
+    while(c<8){
       if((b[c]).equals("1")){
         a+d;
       }
@@ -45,17 +41,17 @@ public class goldByte{
       (this.value.get(b)).not();
     }
   }
-  public static String dtb7(int i0){
+  public static String dtb8(int i0){
     String a="";
     int b=0;
-    int c=64;
+    int c=128;
     int d;
-    while(b<7){
+    while(b<8){
       d=i0-c;
       if(d<0){
-        a=tos(a,"0");
+        a=tos(a,tos("0","2"));
       } else{
-        a=tos(a,"1");
+        a=tos(a,tos("1","2"));
         i0-c;
       }
       c/=2;
@@ -64,6 +60,7 @@ public class goldByte{
     return a;
   }
   public static int getvalue(){
+    String a="";
     
   }
 }
