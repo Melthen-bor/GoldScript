@@ -27,4 +27,7 @@ public class goldBit{
       this.value=true;
     }
   }
+  public static goldByte and(goldByte byte0){
+    
+  }
 }
