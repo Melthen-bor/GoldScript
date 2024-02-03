@@ -15,7 +15,7 @@ Aims to be an intuitive high level language that allow access to low level funct
    A:Check the [wiki](https://github.com/Melthen-bor/GoldScript/wiki) and if that does not help ask in [discussions](https://github.com/Melthen-bor/GoldScript/discussions)
 5. Q:Why is it named GoldScript?
 
-   A:Gold is shiny along with light and this programming language having the intention of being a metaphorical light in the dark for programmers and it is meant for scripting therefore GoldScript
+   A:Gold is shiny along with light and this language having the intention of being a metaphorical light in the dark for programmers and it is meant for scripting therefore GoldScript
 7. Q:Why is it an imperitive language?
 
    A:Portability reasons. remember this is meant to be imbedded. Also it increases readability
