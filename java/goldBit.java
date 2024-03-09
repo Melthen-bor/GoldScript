@@ -1,5 +1,5 @@
-/*This is code is licensed under the GLL
-contains */
+/*This is code is licensed under the Gold Language
+License*/
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
