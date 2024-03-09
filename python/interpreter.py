@@ -1,4 +1,4 @@
-#Thus file is licensed under the OPLL
+#This file is licensed under the OPLL
 import datetime
 import random
 import js2py
