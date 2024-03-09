@@ -1,3 +1,5 @@
+/*This is code is licensed under the GLL
+contains */
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
