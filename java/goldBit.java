@@ -27,7 +27,8 @@ public class goldBit{
       this.value=true;
     }
   }
-  public static goldByte and(goldByte byte0){
-    
+  public static void and(goldBit bit1){
+    if(this.value){
+
   }
 }
