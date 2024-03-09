@@ -1,3 +1,4 @@
+#This file is licensed under the OPLL
 import datetime
 #not truly functional
 class goldException():
