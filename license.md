@@ -1,2 +1,2 @@
-# The GLL(Goldscript Language License)
-You are not allowed to claim this project as yours. You are allowed to use this project in yours as long as you acknowledge this project. You must leave any comments about the GLL in the files if you use this. If you sell a product containing this project, we(The Gold Development team) are entitled to 20% of the income that your product produces.
+# The OPLL(Open Programming Language License)
+You are not allowed to claim this project as your own. You are allowed to use this in your project with proper acknowledgement. Any project in which at least 69% of the files are explictly licensed under the OPLL then all unlicensed files are licensed under the OPLL
