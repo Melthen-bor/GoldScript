@@ -1,4 +1,4 @@
-/*This file is literally censer under the OPLL*/
+/*This file is licensed under the OPLL*/
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
