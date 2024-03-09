@@ -1,5 +1,4 @@
-/*This is code is licensed under the Gold Language
-License*/
+/*This file is licensed under the OPLL*/
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
