@@ -1,4 +1,4 @@
-//package gold;
+/*This file is licensed under the OPLL*/
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileWriter;
