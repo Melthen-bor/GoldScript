@@ -30,6 +30,13 @@ public class goldBit{
   }
   public static void and(goldBit bit1){
     if(this.value){
-
+      if(bit1.getvalue()){
+        this.value=true;
+      } else{
+        this.value=false;
+      }
+    } else{
+      this.value=false;
+    }
   }
 }
