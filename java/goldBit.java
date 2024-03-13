@@ -43,4 +43,12 @@ public class goldBit{
       this.value=false;
     }
   }
+  public static void or(goldBit bit1){
+    if(this.value){
+      this.value=true;
+    } else if(bit.getvalue()){
+      this.value=true;
+    } else{
+      this.value=false;
+    }
 }
