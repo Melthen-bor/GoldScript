@@ -1,3 +1,3 @@
 # Rules
 1. No impersonating the Gold Development Team
-2. No Harassment(being bother after telling someone at least twice to stop bothering you)
+2. No Harassment(bothering someone after they told you at least twice to stop bothering them)
