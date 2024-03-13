@@ -1,4 +1,8 @@
-/*This file is licensed under the OPLL*/
+/*This file is licensed under the OPLL v1.4.
+This file is from the GoldScript repo
+owned by Melthen-bor. 
+This file contains commitments by
+Melthen-bor*/
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Collections;
