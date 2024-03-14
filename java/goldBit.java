@@ -22,6 +22,9 @@ public class goldBit{
   public goldBit(){
     this.value=false;
   }
+  public static void setvalue(boolean val){
+    this.value=val;
+  }
   public static boolean getvalue(){
     return this.value;
   }
