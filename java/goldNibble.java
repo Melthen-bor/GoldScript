@@ -41,6 +41,12 @@ public class goldNibble extends goldObject{
   public boolean getval3(){
     return this.bit3.getvalue();
   }
+  public void setvalue(boolean b0,boolean b1,boolean b2,boolean b3){
+    this.bit0.setvalue(b0);
+    this.bit1.setvalue(b1);
+    this.bit2.setvalue(b2);
+    this.bit3.setvalue(b3);
+  }
   public void not(){
     this.bit0.not();
     this.bit1.not();
