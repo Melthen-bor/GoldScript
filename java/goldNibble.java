@@ -1,4 +1,4 @@
-/*This file is licensed under the OPLL v1.4.
+/*This file is licensed under the OPLL v1.5
 This file is from the GoldScript repo
 owned by Melthen-bor. 
 This file contains commitments by
@@ -17,36 +17,39 @@ import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
-public class goldNibble{
+public class goldNibble extends goldObject{
   goldBit bit0;
   goldBit bit1;
   goldBit bit2;
   goldBit bit3;
   public goldNibble(){
-    bit0.setvalue(false);
-    bit1.setvalue(false);
-    bit2.setvalue(false);
-    bit3.setvalue(false);
+    this.bit0.setvalue(false);
+    this.bit1.setvalue(false);
+    this.bit2.setvalue(false);
+    this.bit3.setvalue(false);
   }
   public boolean getval0(){
-    return bit0.getvalue();
+    return this.bit0.getvalue();
   }
   public boolean getval1(){
-    return bit1.getvalue();
+    return this.bit1.getvalue();
   }
   public boolean getval2(){
-    return bit2.getvalue();
+    return this.bit2.getvalue();
   }
   public boolean getval3(){
-    return bit3.getvalue();
+    return this.bit3.getvalue();
   }
   public void not(){
-    bit0.not();
-    bit1.not();
-    bit2.not();
-    bit3.not();
+    this.bit0.not();
+    this.bit1.not();
+    this.bit2.not();
+    this.bit3.not();
   }
-  public void and(){
-    
+  public void and(goldNibble nib1){
+    this.bit0.and(nib1.bit0);
+    this.bit1.and(nib1.bit1);
+    this.bit2.and(nib1.bit2);
+    this.bit3.and(nib1.bit3);
   }
 }
