@@ -23,6 +23,7 @@ public class goldNibble extends goldObject{
   goldBit bit2;
   goldBit bit3;
   public goldNibble(){
+    super();
     this.bit0.setvalue(false);
     this.bit1.setvalue(false);
     this.bit2.setvalue(false);
