@@ -53,4 +53,10 @@ public class goldNibble extends goldObject{
     this.bit2.and(nib1.bit2);
     this.bit3.and(nib1.bit3);
   }
+  public void or(goldNibble nib1){
+    this.bit0.or(nib1.bit0);
+    this.bit1.or(nib1.bit1);
+    this.bit2.or(nib1.bit2);
+    this.bit3.or(nib1.bit3);
+  }
 }
