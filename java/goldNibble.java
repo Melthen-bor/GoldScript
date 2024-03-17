@@ -46,5 +46,7 @@ public class goldNibble{
     bit2.not();
     bit3.not();
   }
-  
+  public void and(){
+    
+  }
 }
