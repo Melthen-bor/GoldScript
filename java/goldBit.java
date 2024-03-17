@@ -17,9 +17,10 @@ import java.time.format.DateTimeFormatter;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptEngine;
 import java.lang.Math;
-public class goldBit{
+public class goldBit extends goldObject{
   boolean value;
   public goldBit(){
+    super();
     this.value=false;
   }
   public static void setvalue(boolean val){
