@@ -24,4 +24,13 @@ public class goldByte extends goldObject{
   public goldByte(){
     super();
   }
+  public goldNibble getnib0(){
+    return this.nib0;
+  }
+  public goldNibble getnib1(){
+    return this.nib1;
+  }
+  public void and(goldByte byte1){
+    this.
+  }
 }
