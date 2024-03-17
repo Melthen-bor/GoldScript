@@ -40,4 +40,11 @@ public class goldNibble{
   public boolean getval3(){
     return bit3.getvalue();
   }
+  public void not(){
+    bit0.not();
+    bit1.not();
+    bit2.not();
+    bit3.not();
+  }
+  
 }
