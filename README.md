@@ -30,3 +30,4 @@ Aims to be an intuitive high level language that allows access to low level func
 ## Notes 
 1. The Java implementation is probably going to be the most stable as that is where things are first implemented
 2. The implementations can be expanded by extending the classes
+3. The Java implementation requires the [java_preprocessor project](https://github.com/Melthen-bor/java_preprocessor/tree/main) to compile
