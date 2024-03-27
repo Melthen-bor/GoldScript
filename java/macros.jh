@@ -25,3 +25,18 @@ commitments by:
     return o0+""+o1;
   }
 #end_def
+#start_def LIST_PARSE
+  public String parselist(String[] args){
+    int a=1;
+    String out=args[0];
+    while(true){
+      try{
+        out=concate(out,concate("#",args[a]));
+        a++;
+      } catch(Exception e){
+        break;
+      }
+    }
+    return out;
+  }
+#end_def
