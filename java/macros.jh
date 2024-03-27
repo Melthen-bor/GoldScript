@@ -20,3 +20,8 @@ This file is form the GoldScript repository
 owned by Melthen-Bor. This file contains
 commitments by:
 #end_def
+#start_def CONCATE_FUNC
+  public String concate(Object o0,Object o1){
+    return o0+""+o1;
+  }
+#end_def
