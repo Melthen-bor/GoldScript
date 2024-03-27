@@ -14,3 +14,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 #end_def
+#start_def LICENSE
+/*This file is licensed under the OPLL v1.5
+This file is form the GoldScript repository
+owned by Melthen-Bor. This file contains
+commitments by:
+#end_def
