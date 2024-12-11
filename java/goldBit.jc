@@ -1,5 +1,7 @@
 #include macros
-#put imports
+#put LICENSE
+M
+#put IMPORTS
 public class goldBit extends goldObject{
   boolean value;
   public goldBit(){
