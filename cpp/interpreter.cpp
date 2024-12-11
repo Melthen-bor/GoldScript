@@ -3,23 +3,12 @@
 #include <thread>
 #include <string>
 #include <list>
+#define TYPE_INFO unsigned char
 using namespace std;
-class goldObject{
-  String val;
-  public goldObject(String value){
-    this.val = value;
-  }
-  public getValue(){
-    return this.val;
-  }
-  public setValue(String value){
-    this.val = value;
-  }
-}
-class goldString: private goldObject{
-  public goldString(String value){
-  }
-}
+struct goldObject{
+  void* value;
+  TYPE_INFO value_type;
+};
 class interpreter{
   int line;
   
