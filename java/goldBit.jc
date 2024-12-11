@@ -1,6 +1,7 @@
 #include macros
 #put LICENSE
-M
+-Malthein Bor(Melthen-bor)
+*/
 #put IMPORTS
 public class goldBit extends goldObject{
   boolean value;
