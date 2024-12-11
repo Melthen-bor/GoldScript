@@ -1,6 +1,7 @@
 #include macros
 #put LICENSE
--Melthen-bor*/
+-Malthein Bor(Melthen-bor)
+*/
 #put IMPORTS
 public class interpreter{
   private int line;
